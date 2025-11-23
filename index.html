@@ -8,12 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-kfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <header class="site-header">
       <div class="container header-top">
-        <div class="logo">Studio <span>Leiliane Martins</span> <small>Estética</small></div>
+        <a href="#" class="logo" aria-label="Studio Leiliane Martins Estética">
+          <img src="img/Ativo 5.svg" alt="Studio Leiliane Martins Estética" class="logo-img">
+        </a>
       </div>
       <nav class="main-nav" aria-label="Navegação principal">
         <div class="container nav-inner">
@@ -46,27 +50,33 @@
         </div>
       </section>
 
-      <section class="categories" id="servicos">
+      <section class="services" id="servicos">
         <div class="container">
-          <div class="cats">
-            <article class="cat">
-              <div class="scallop">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3f1b" alt="tratamento facial"/>
-              </div>
-              <div class="ribbon">Terapias Faciais</div>
-            </article>
-            <article class="cat">
-              <div class="scallop">
-                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8c3b7b" alt="spa corporal"/>
-              </div>
-              <div class="ribbon">Corpo &amp; Spa</div>
-            </article>
-            <article class="cat">
-              <div class="scallop">
-                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9e1" alt="tratamentos avançados"/>
-              </div>
-              <div class="ribbon">Tratamentos Avançados</div>
-            </article>
+          <div class="services-grid">
+            <div class="services-col">
+              <h3 class="services-title">ESTÉTICA FACIAL</h3>
+              <ul class="services-list">
+                <li class="service-item"><i class="fa-solid fa-face-smile service-icon" aria-hidden="true"></i><span>Limpeza de Pele Personalizada</span></li>
+                <li class="service-item"><i class="fa-solid fa-shield-halved service-icon" aria-hidden="true"></i><span>Reparação de Barreira Cutânea</span></li>
+                <li class="service-item"><i class="fa-solid fa-droplet service-icon" aria-hidden="true"></i><span>Tratamentos Faciais com Peeling Químico</span></li>
+                <li class="service-item"><i class="fa-solid fa-circle-exclamation service-icon" aria-hidden="true"></i><span>Acne / Cicatriz de Acne</span></li>
+                <li class="service-item"><i class="fa-solid fa-sun service-icon" aria-hidden="true"></i><span>Manchas</span></li>
+                <li class="service-item"><i class="fa-solid fa-seedling service-icon" aria-hidden="true"></i><span>Rejuvenescimento</span></li>
+                <li class="service-item"><i class="fa-solid fa-needle service-icon" aria-hidden="true"></i><span>Microagulhamento</span></li>
+              </ul>
+            </div>
+
+            <div class="services-col">
+              <h3 class="services-title">ESTÉTICA CORPORAL</h3>
+              <ul class="services-list">
+                <li class="service-item"><i class="fa-solid fa-heart-pulse service-icon" aria-hidden="true"></i><span>Drenagem Linfática</span></li>
+                <li class="service-item"><i class="fa-solid fa-spa service-icon" aria-hidden="true"></i><span>Massagem Relaxante</span></li>
+                <li class="service-item"><i class="fa-solid fa-fire service-icon" aria-hidden="true"></i><span>Massagem Modeladora</span></li>
+                <li class="service-item"><i class="fa-solid fa-hand-holding-water service-icon" aria-hidden="true"></i><span>Ventosaterapia</span></li>
+                <li class="service-item"><i class="fa-solid fa-wave-square service-icon" aria-hidden="true"></i><span>Ultrassom</span></li>
+                <li class="service-item"><i class="fa-solid fa-bolt service-icon" aria-hidden="true"></i><span>Corrente Russa</span></li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -152,6 +162,20 @@
             <a href="#" class="insta"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="insta3"></a>
             <a href="#" class="insta"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" alt="insta4"></a>
             <a href="#" class="insta"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=5" alt="insta5"></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contato">
+        <div class="container">
+          <div class="contact-inner">
+            <div class="contact-copy">
+              <h3 class="section-title">Venha nos visitar</h3>
+              <p class="visit">“Venha nos fazer uma visita e tomar aquele cafézinho com aquele capuccino. Estamos esperando por você!”</p>
+              <p class="address"><strong>Endereço:</strong><br>QS 08 Conjunto 02 Lotes 01/04 Sala 207<br>Centro Comercial Lux<br>Samambaia Sul - DF</p>
+              <p class="schedule"><strong>Agendamento:</strong> <a href="tel:+5561992207305">(61) 99220-7305</a></p>
+              <p class="instagram"><strong>Instagram:</strong> <a href="https://www.instagram.com/leilianemartinsestetica" target="_blank" rel="noopener">@leilianemartinsestetica</a></p>
+            </div>
           </div>
         </div>
       </section>
