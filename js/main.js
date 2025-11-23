@@ -218,4 +218,34 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // hide toast when clicking outside
   document.addEventListener('click', (e)=>{ if(couponToast && couponToast.getAttribute('aria-hidden')==='false'){ const inside = couponToast.contains(e.target) || (notifBtn && notifBtn.contains(e.target)); if(!inside) hideToast(); } });
+
+  // Coupon photo fallback: if image fails to load, replace with a background fallback
+  document.querySelectorAll('.coupon-photo').forEach(img => {
+    // try alternative candidate paths before falling back to default icon
+    const candidates = [
+      'img/fotonocupom.jpg',
+      'img/FOTONOCUPOM.jpg',
+      'FOTONOCUPOM.jpg',
+      'fotonocupom.jpg'
+    ];
+    let attempts = 0;
+    const handleError = ()=>{
+      const right = img.closest('.coupon-right');
+      if(!right) return;
+      if(attempts < candidates.length){
+        img.src = candidates[attempts++];
+        return;
+      }
+      // no more candidates -> apply graceful background fallback
+      img.style.display = 'none';
+      right.classList.add('coupon-photo-missing');
+      right.style.backgroundImage = 'url("img/icon-192.svg")';
+      right.style.backgroundSize = 'cover';
+      right.style.backgroundPosition = 'center';
+      right.style.backgroundRepeat = 'no-repeat';
+    };
+    img.addEventListener('error', handleError);
+    // also check if it has already failed to load
+    if(img.complete && img.naturalWidth === 0){ handleError(); }
+  });
 });

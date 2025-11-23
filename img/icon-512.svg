@@ -1,6 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="100%" height="100%" rx="64" fill="#f3d6d8"/>
-  <g transform="translate(96,120)" fill="#612a2a" font-family="Playfair Display, serif" font-weight="700" font-size="240">
-    <text x="20" y="260">LM</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Studio Leiliane Martins">
+  <defs>
+    <radialGradient id="bgGrad512" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#fff7f7"/>
+      <stop offset="100%" stop-color="#f3d6d8"/>
+    </radialGradient>
+    <radialGradient id="coreGrad512" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#ffdfe2"/>
+      <stop offset="100%" stop-color="#c77f86"/>
+    </radialGradient>
+    <filter id="softShadow512" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="22" stdDeviation="40" flood-color="#000" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="64" fill="url(#bgGrad512)"/>
+  <g filter="url(#softShadow512)">
+    <circle cx="256" cy="256" r="140" fill="#fff" opacity="0.6"/>
+    <circle cx="256" cy="256" r="92" fill="url(#coreGrad512)"/>
   </g>
+  <circle cx="283" cy="244" r="12" fill="#ffffff" opacity="0.94"/>
 </svg>

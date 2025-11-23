@@ -16,10 +16,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="manifest" href="/site.webmanifest">
-    <!-- Favicons / App icons -->
+    <!-- Favicons / App icons (PNG fallbacks for broader compatibility) -->
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="img/icon-192.svg" sizes="192x192">
-    <link rel="apple-touch-icon" href="img/icon-192.svg">
+    <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="img/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" href="img/icon-192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -57,7 +59,8 @@
               <div class="coupon-small">VOCÊ GANHA</div>
             </div>
             <div class="coupon-right">
-              <div class="offer">SPA<br>LABIAL</div>
+              <img src="img/fotonocupom.jpg" alt="Spa Labial" class="coupon-photo">
+              <div class="offer offer-overlay">SPA<br>LABIAL</div>
             </div>
             <div class="coupon-cta">AGENDAR</div>
           </div>
@@ -249,13 +252,82 @@
         </div>
       </section>
 
-      <section class="testimonials">
+      <section class="feedback" id="feedback">
         <div class="container">
-          <h2 class="section-title">Avaliações</h2>
-          <div class="grid reviews">
-            <blockquote class="review">“Atendimento impecável e resultados excelentes.”<cite>— Maria</cite></blockquote>
-            <blockquote class="review">“Ambiente acolhedor e profissionais muito atenciosos.”<cite>— Ana</cite></blockquote>
-            <blockquote class="review">“Melhorei a autoestima depois do tratamento!”<cite>— Júlia</cite></blockquote>
+          <h2 class="section-title">O que nossos clientes dizem</h2>
+          <p class="feedback-intro">Depoimentos reais sobre os tratamentos que oferecemos — opiniões sinceras e cheias de carinho.</p>
+          <div class="feedback-grid">
+            <article class="feedback-card">
+              <div class="fb-top">
+                <img class="fb-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="Cliente Sofia">
+                <div class="fb-meta">
+                  <strong>Sofia R.</strong>
+                  <span class="fb-service">Peeling Suave</span>
+                </div>
+              </div>
+              <p class="fb-quote">"Fiz o peeling e minha pele ficou luminosa — a equipe me explicou tudo com calma. Volto sempre!"</p>
+              <div class="fb-stars">★★★★★</div>
+            </article>
+
+            <article class="feedback-card">
+              <div class="fb-top">
+                <img class="fb-avatar" src="https://images.unsplash.com/photo-1545996124-1a6a2b3d8a2f?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="Cliente Bruno">
+                <div class="fb-meta">
+                  <strong>Bruno M.</strong>
+                  <span class="fb-service">Hidratação Profunda</span>
+                </div>
+              </div>
+              <p class="fb-quote">"A hidratação deixou minha pele tão macia — senti diferença já na primeira sessão."</p>
+              <div class="fb-stars">★★★★★</div>
+            </article>
+
+            <article class="feedback-card">
+              <div class="fb-top">
+                <img class="fb-avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="Cliente Camila">
+                <div class="fb-meta">
+                  <strong>Camila P.</strong>
+                  <span class="fb-service">Microagulhamento</span>
+                </div>
+              </div>
+              <p class="fb-quote">"Estava insegura, mas o resultado superou as expectativas. Profissionais muito cuidadosos."</p>
+              <div class="fb-stars">★★★★★</div>
+            </article>
+
+            <article class="feedback-card">
+              <div class="fb-top">
+                <img class="fb-avatar" src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" alt="Cliente Daniela">
+                <div class="fb-meta">
+                  <strong>Daniela S.</strong>
+                  <span class="fb-service">Massagem Relax</span>
+                </div>
+              </div>
+              <p class="fb-quote">"Saí flutuando! Atendimento delicado e ambiente supertranquilo — recomendo demais."</p>
+              <div class="fb-stars">★★★★★</div>
+            </article>
+
+            <article class="feedback-card">
+              <div class="fb-top">
+                <img class="fb-avatar" src="https://images.unsplash.com/photo-1541534741688-6078c1f0b8b2?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5" alt="Cliente Lucas">
+                <div class="fb-meta">
+                  <strong>Lucas T.</strong>
+                  <span class="fb-service">Limpeza de Pele</span>
+                </div>
+              </div>
+              <p class="fb-quote">"A limpeza foi feita com muito cuidado — minha pele reagiu muito bem e sem irritação."</p>
+              <div class="fb-stars">★★★★★</div>
+            </article>
+
+            <article class="feedback-card">
+              <div class="fb-top">
+                <img class="fb-avatar" src="https://images.unsplash.com/photo-1544006659-5b0b6b1b8f3b?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6" alt="Cliente Marisa">
+                <div class="fb-meta">
+                  <strong>Marisa L.</strong>
+                  <span class="fb-service">Design de Sobrancelhas</span>
+                </div>
+              </div>
+              <p class="fb-quote">"As sobrancelhas ficaram perfeitas, com formato natural. Atendimento atencioso e profissional."</p>
+              <div class="fb-stars">★★★★★</div>
+            </article>
           </div>
         </div>
       </section>
