@@ -248,4 +248,46 @@ document.addEventListener('DOMContentLoaded', function(){
     // also check if it has already failed to load
     if(img.complete && img.naturalWidth === 0){ handleError(); }
   });
+
+  /* --- Mobile bottom nav active handling --- */
+  (function(){
+    const mobileNav = document.querySelector('.mobile-bottom-nav');
+    if(!mobileNav) return;
+    const links = Array.from(mobileNav.querySelectorAll('a[href^="#"]'));
+
+    function setActiveByHash(hash){
+      if(!hash) hash = '#home';
+      links.forEach(a=> a.classList.toggle('active', a.getAttribute('href')===hash));
+    }
+
+    // click -> set active immediately (allow default navigation)
+    links.forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        links.forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
+      });
+    });
+
+    // set initial active based on location.hash
+    setTimeout(()=> setActiveByHash(location.hash || '#home'), 60);
+
+    // update on hashchange (user navigated or clicked a link elsewhere)
+    window.addEventListener('hashchange', ()=> setActiveByHash(location.hash || '#home'));
+
+    // keep in sync while scrolling using IntersectionObserver (optional)
+    try{
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
+      if(sections.length){
+        const io = new IntersectionObserver((entries)=>{
+          entries.forEach(entry=>{
+            if(entry.isIntersecting){
+              const id = '#'+entry.target.id;
+              setActiveByHash(id);
+            }
+          });
+        },{threshold:0.55});
+        sections.forEach(s=>io.observe(s));
+      }
+    }catch(e){/* ignore if IntersectionObserver unsupported */}
+  })();
 });
