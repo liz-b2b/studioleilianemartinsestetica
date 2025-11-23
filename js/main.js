@@ -142,8 +142,8 @@ document.addEventListener('DOMContentLoaded', function(){
     if(e.key==='ArrowRight') { currentIndex = (currentIndex+1)%gallery.length; renderGallery(); }
   });
 
-  // attach open handlers
-  const serviceItems = document.querySelectorAll('.service-item');
+  // attach open handlers (support both legacy .service-item and new .service-card)
+  const serviceItems = document.querySelectorAll('.service-item, .service-card');
   serviceItems.forEach(item=>{
     const openHandler = ()=>{
       const title = item.querySelector('span') ? item.querySelector('span').innerText.trim() : item.innerText.trim();
@@ -154,4 +154,68 @@ document.addEventListener('DOMContentLoaded', function(){
     item.addEventListener('click', openHandler);
     item.addEventListener('keypress', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); openHandler(); } });
   });
+
+  // button-specific handler: open modal when pressing the 'CONHECER' button inside a card
+  const knowButtons = document.querySelectorAll('.btn-know');
+  knowButtons.forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const card = btn.closest('.service-card') || btn.closest('.service-item');
+      if(!card) return;
+      const title = card.querySelector('h4 span') ? card.querySelector('h4 span').innerText.trim() : (card.querySelector('span') ? card.querySelector('span').innerText.trim() : 'Serviço');
+      const raw = card.dataset.images || '';
+      const images = raw.split(',').map(s=>s.trim()).filter(Boolean);
+      openModal(title, images, '');
+    });
+    btn.addEventListener('keypress', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); btn.click(); } });
+  });
+
+  /* --- Coupon toast notification logic --- */
+  const notifBtn = document.getElementById('notif-btn');
+  const couponToast = document.getElementById('coupon-toast');
+  const toastClose = couponToast && couponToast.querySelector('.toast-close');
+  const toastOpenCoupon = document.getElementById('toast-open-coupon');
+  const promoBadge = document.querySelector('.promo-badge.coupon');
+
+  function showToast(){
+    if(!couponToast) return;
+    couponToast.setAttribute('aria-hidden','false');
+    // set expanded state on button
+    if(notifBtn) notifBtn.setAttribute('aria-expanded','true');
+    // auto-hide after 8s
+    clearTimeout(couponToast._hideTimeout);
+    couponToast._hideTimeout = setTimeout(hideToast, 8000);
+  }
+  function hideToast(){
+    if(!couponToast) return;
+    couponToast.setAttribute('aria-hidden','true');
+    if(notifBtn) notifBtn.setAttribute('aria-expanded','false');
+    clearTimeout(couponToast._hideTimeout);
+  }
+
+  if(notifBtn){
+    notifBtn.addEventListener('click', (e)=>{ e.stopPropagation(); if(couponToast && couponToast.getAttribute('aria-hidden')==='false') hideToast(); else showToast(); });
+  }
+  if(toastClose) toastClose.addEventListener('click', hideToast);
+  // clicking the toast CTA opens the coupon (or scrolls to promo badge)
+  if(toastOpenCoupon){
+    toastOpenCoupon.addEventListener('click', (e)=>{
+      e.preventDefault();
+      hideToast();
+      if(promoBadge){
+        // visually bump the promo badge and scroll into view
+        promoBadge.scrollIntoView({behavior:'smooth',block:'center'});
+        promoBadge.classList.add('promo-highlight');
+        setTimeout(()=>promoBadge.classList.remove('promo-highlight'),2000);
+        // if promo badge is a link, simulate click
+        if(typeof promoBadge.click === 'function') promoBadge.click();
+      }
+    });
+  }
+
+  // show toast on page load after a short delay
+  try{ const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; if(!reduced) setTimeout(showToast, 1200); else setTimeout(showToast, 800); }catch(e){}
+
+  // hide toast when clicking outside
+  document.addEventListener('click', (e)=>{ if(couponToast && couponToast.getAttribute('aria-hidden')==='false'){ const inside = couponToast.contains(e.target) || (notifBtn && notifBtn.contains(e.target)); if(!inside) hideToast(); } });
 });

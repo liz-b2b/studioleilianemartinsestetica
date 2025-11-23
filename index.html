@@ -10,6 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome (CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-kfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Theme color for address bar / mobile UI -->
+    <meta name="theme-color" content="#f3d6d8">
+    <meta name="msapplication-TileColor" content="#f3d6d8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Favicons / App icons -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="img/icon-192.svg" sizes="192x192">
+    <link rel="apple-touch-icon" href="img/icon-192.svg">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -18,13 +28,19 @@
         <a href="#" class="logo" aria-label="Studio Leiliane Martins Estética">
           <img src="img/Ativo 5.svg" alt="Studio Leiliane Martins Estética" class="logo-img">
         </a>
+        <div class="notif-wrap" aria-hidden="false">
+          <button id="notif-btn" class="notif-btn" aria-label="Notificações" aria-haspopup="true" aria-expanded="false">
+            <i class="fa-solid fa-bell" aria-hidden="true"></i>
+            <span class="notif-dot" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
       <nav class="main-nav" aria-label="Navegação principal">
         <div class="container nav-inner">
           <a href="#">HOME</a>
           <a href="#servicos">SERVIÇOS</a>
           <a href="#sobre">SOBRE</a>
-          <a href="#blog">BLOG</a>
+          <a href="#contato">LOCALIZAÇÃO</a>
           <a href="#contato">CONTATO</a>
         </div>
       </nav>
@@ -32,15 +48,20 @@
 
     <main>
       <section class="hero" id="home" style="background-image:url('limpeza%20de%20pele.jpg')">
-        <!-- Promo badge (cupom) -->
-        <div class="promo-badge" role="note" aria-label="Cupom promocional">
-          <!-- If you upload an image named 'cupom.png' (or .jpg) in img/, it will be used automatically -->
-          <img src="img/cupom.png" alt="Cupom: SPA Labial" class="promo-img" onerror="this.style.display='none'">
-          <div class="promo-fallback">
-            <strong>Ganhe um</strong>
-            <span>SPA Labial</span>
+        <!-- Modern animated coupon -->
+        <a href="#contato" class="promo-badge coupon" role="note" aria-label="Cupom promocional: SPA Labial">
+          <div class="coupon-inner" aria-hidden="false">
+            <div class="coupon-left">
+              <div class="coupon-top">NA COMPRA DE QUALQUER</div>
+              <div class="coupon-mid">PROCEDIMENTO FACIAL</div>
+              <div class="coupon-small">VOCÊ GANHA</div>
+            </div>
+            <div class="coupon-right">
+              <div class="offer">SPA<br>LABIAL</div>
+            </div>
+            <div class="coupon-cta">AGENDAR</div>
           </div>
-        </div>
+        </a>
         <div class="hero-overlay">
           <div class="container">
             <div class="hero-card">
@@ -64,27 +85,104 @@
           <div class="services-grid">
             <div class="services-col">
               <h3 class="services-title">ESTÉTICA FACIAL</h3>
-              <ul class="services-list">
-                 <li class="service-item" data-images="limpeza de pele.jpg"><i class="fa-solid fa-face-smile service-icon" aria-hidden="true"></i><span>Limpeza de Pele Personalizada</span></li>
-                 <li class="service-item" data-images="Reparação de Barreira Cutânea.jpg"><i class="fa-solid fa-shield-halved service-icon" aria-hidden="true"></i><span>Reparação de Barreira Cutânea</span></li>
-                 <li class="service-item" data-images="peeling quimico.jpg"><i class="fa-solid fa-droplet service-icon" aria-hidden="true"></i><span>Tratamentos Faciais com Peeling Químico</span></li>
-                 <li class="service-item" data-images="acne.jpg"><i class="fa-solid fa-circle-exclamation service-icon" aria-hidden="true"></i><span>Acne / Cicatriz de Acne</span></li>
-                 <li class="service-item" data-images="manchas.jpg"><i class="fa-solid fa-sun service-icon" aria-hidden="true"></i><span>Manchas</span></li>
-                 <li class="service-item" data-images="rejuvelhecimento.jpg"><i class="fa-solid fa-seedling service-icon" aria-hidden="true"></i><span>Rejuvenescimento</span></li>
-                 <li class="service-item" data-images="microagulhamento.jpg"><i class="fa-solid fa-needle service-icon" aria-hidden="true"></i><span>Microagulhamento</span></li>
-              </ul>
+              <div class="products services-catalog">
+                <article class="product service-card" tabindex="0" data-images="limpeza-de-pele.jpg">
+                  <img src="servicos/limpeza-de-pele.jpg" alt="Limpeza de Pele Personalizada" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body">
+                    <h4><span>Limpeza de Pele Personalizada</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="reparacao-de-barreira-cutanea.jpg">
+                  <img src="servicos/reparacao-de-barreira-cutanea.jpg" alt="Reparação de Barreira Cutânea" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Reparação de Barreira Cutânea</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="peeling-quimico.jpg">
+                  <img src="servicos/peeling-quimico.jpg" alt="Peeling Químico" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Tratamentos Faciais com Peeling Químico</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="acne.jpg">
+                  <img src="servicos/acne.jpg" alt="Acne / Cicatriz de Acne" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Acne / Cicatriz de Acne</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="limpeza-de-pele.jpg">
+                  <img src="servicos/limpeza-de-pele.jpg" alt="Manchas" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Manchas</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="rejuvelhecimento.jpg">
+                  <img src="servicos/rejuvelhecimento.jpg" alt="Rejuvenescimento" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Rejuvenescimento</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="microagulhamento.jpg">
+                  <img src="servicos/microagulhamento.jpg" alt="Microagulhamento" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Microagulhamento</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+              </div>
             </div>
 
             <div class="services-col">
               <h3 class="services-title">ESTÉTICA CORPORAL</h3>
-              <ul class="services-list">
-                 <li class="service-item" data-images="drenagem.jpg"><i class="fa-solid fa-heart-pulse service-icon" aria-hidden="true"></i><span>Drenagem Linfática</span></li>
-                 <li class="service-item" data-images="massagem relaxante.jpg"><i class="fa-solid fa-spa service-icon" aria-hidden="true"></i><span>Massagem Relaxante</span></li>
-                 <li class="service-item" data-images="modeladora.jpg"><i class="fa-solid fa-fire service-icon" aria-hidden="true"></i><span>Massagem Modeladora</span></li>
-                 <li class="service-item" data-images="ventosaterapia.jpg"><i class="fa-solid fa-hand-holding-water service-icon" aria-hidden="true"></i><span>Ventosaterapia</span></li>
-                 <li class="service-item" data-images="ultrasom.jpg"><i class="fa-solid fa-wave-square service-icon" aria-hidden="true"></i><span>Ultrassom</span></li>
-                 <li class="service-item" data-images="corrente rusa.jpg"><i class="fa-solid fa-bolt service-icon" aria-hidden="true"></i><span>Corrente Russa</span></li>
-              </ul>
+              <div class="products services-catalog">
+                <article class="product service-card" tabindex="0" data-images="limpeza-de-pele.jpg">
+                  <img src="servicos/limpeza-de-pele.jpg" alt="Drenagem Linfática" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Drenagem Linfática</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="massagem-relaxante.jpg">
+                  <img src="servicos/massagem-relaxante.jpg" alt="Massagem Relaxante" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Massagem Relaxante</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="modeladora.jpg">
+                  <img src="servicos/modeladora.jpg" alt="Massagem Modeladora" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Massagem Modeladora</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="ultrasom.jpg">
+                  <img src="servicos/ultrasom.jpg" alt="Ventosaterapia" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Ventosaterapia</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="ultrasom.jpg">
+                  <img src="servicos/ultrasom.jpg" alt="Ultrassom" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Ultrassom</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+
+                <article class="product service-card" tabindex="0" data-images="corrente-rusa.jpg">
+                  <img src="servicos/corrente-rusa.jpg" alt="Corrente Russa" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Corrente Russa</span></h4>
+                    <button class="btn btn-know" type="button">CONHECER</button>
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
         </div>
@@ -243,5 +341,21 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <!-- Coupon toast notification -->
+    <div id="coupon-toast" class="coupon-toast" aria-hidden="true">
+      <div class="coupon-toast-inner">
+        <button class="toast-close" aria-label="Fechar notificação">×</button>
+        <div class="toast-body">
+          <div class="toast-emoji">🎁</div>
+          <div>
+            <strong>Surpresa!</strong>
+            <p>Use o cupom <span class="coupon-code">BELEZA10</span> e ganhe <strong>10% OFF</strong> na sua primeira sessão.</p>
+            <div class="toast-actions">
+              <button id="toast-open-coupon" class="btn-know">VER CUPOM</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

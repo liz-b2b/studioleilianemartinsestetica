@@ -13,13 +13,13 @@ body{margin:0;font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto
 .site-header{padding:24px 0;border-bottom:1px solid rgba(0,0,0,0.04)}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
 .logo{display:inline-block;text-decoration:none}
-.logo-img{height:56px;max-height:64px;width:auto;display:inline-block}
+.logo-img{height:88px;max-height:110px;width:auto;display:inline-block;transition:height .22s ease;will-change:transform;transform-origin:center;animation:logoFloat 6s ease-in-out infinite}
 .logo span{display:block;font-weight:600;font-size:24px}
 .logo small{display:block;font-size:12px;color:var(--muted)}
-.main-nav{background:transparent;border-top:1px solid rgba(0,0,0,0.03);border-bottom:1px solid rgba(0,0,0,0.03)}
-.nav-inner{display:flex;gap:22px;justify-content:center;padding:10px 20px}
-.main-nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:13px}
-.main-nav a:hover{text-decoration:none}
+.main-nav{background:var(--primary);border-top:none;border-bottom:none;box-shadow:0 6px 18px rgba(199,127,134,0.06)}
+.nav-inner{display:flex;gap:22px;justify-content:center;padding:12px 20px}
+.main-nav a{color:#612a2a;text-decoration:none;font-weight:700;font-size:13px}
+.main-nav a:hover{color:#fff;text-decoration:none}
 
 /* Remove underline for all links by default (keep color change on hover) */
 a{color:inherit;text-decoration:none}
@@ -40,13 +40,20 @@ a:hover{text-decoration:none;color:var(--accent)}
 .btn.primary{background:linear-gradient(180deg,#f5d4d6 0%,#f0c7c9 100%);border:0;font-weight:700;padding:14px 26px;box-shadow:0 6px 18px rgba(233,220,207,0.5);color:#3e2b2b}
 .btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(233,220,207,0.45)}
 
+/* Conhecer button for service cards */
+.btn-know{display:inline-block;padding:10px 16px;border-radius:20px;border:1px solid rgba(62,43,43,0.06);background:linear-gradient(180deg,#fff,#fff);color:#3e2b2b;font-weight:700;margin-top:12px;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,background .22s}
+.btn-know:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(62,43,43,0.08);background:linear-gradient(180deg,#fff,#fbf2f2)}
+.btn-know:active{transform:translateY(-1px)}
+.p-body .btn-know{width:100%;text-align:center}
+
 .brand-statement{padding:20px 0;text-align:center}
 .brand-statement .lead{max-width:760px;margin:0 auto;color:var(--muted)}
 
 .categories{padding:18px 0}
 .services{padding:22px 0}
-.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;align-items:start}
-.services-title{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:12px;color:var(--text);letter-spacing:1px}
+.services-grid{display:flex;gap:44px;align-items:flex-start;justify-content:space-between}
+.services-col{flex:1;min-width:320px}
+.services-title{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:18px;color:var(--text);letter-spacing:1px;padding-bottom:8px;border-bottom:3px solid rgba(199,127,134,0.06);text-transform:uppercase}
 .services-list{list-style:none;padding:0;margin:0}
 .service-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.03)}
 .service-item:last-child{border-bottom:0}
@@ -61,6 +68,46 @@ a:hover{text-decoration:none;color:var(--accent)}
 .product img{width:100%;height:160px;object-fit:cover}
 .product .p-body{padding:12px}
 .product h4{margin:6px 0 4px;font-size:16px}
+
+/* Services catalog: larger, sophisticated cards */
+.services-col .services-catalog{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start;align-content:start}
+.services-col + .services-col{padding-left:34px;border-left:1px solid rgba(0,0,0,0.04)}
+
+/* Ensure cards align visually in rows by enforcing min height and aligning content */
+.services-catalog .product{min-height:360px;display:flex;flex-direction:column}
+.services-catalog .p-body{margin-top:auto}
+
+/* Emphasize column headings */
+.services-col .services-title{font-size:18px;color:#3e2b2b;letter-spacing:2px}
+
+/* Tighter spacing for the title + catalogue block */
+.services-col{padding-top:6px}
+.services-catalog .product{border-radius:14px;overflow:hidden;border:0;background:#fff;box-shadow:0 10px 30px rgba(16,12,12,0.06);transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s;display:flex;flex-direction:column}
+.services-catalog .product img{height:220px;object-fit:cover;width:100%;display:block;transition:transform .6s ease}
+.services-catalog .p-body{padding:18px 16px 20px;flex:0 0 auto}
+.services-catalog h4{font-size:16px;margin:0;color:#2e2e2e}
+.services-catalog .p-body span{display:block;font-weight:700}
+
+.service-card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(16,12,12,0.12)}
+.service-card:hover img{transform:scale(1.06)}
+
+/* subtle overlay accent when hovering */
+.service-card::after{content:'';position:absolute;inset:0;border-radius:14px;pointer-events:none;opacity:0;transition:opacity .28s}
+.service-card:hover::after{opacity:1;background:linear-gradient(180deg,rgba(250,240,240,0.03),rgba(233,214,216,0.04))}
+
+/* entry animation */
+.service-card{opacity:0;transform:translateY(10px);animation:cardIn .44s cubic-bezier(.2,.9,.2,1) forwards}
+@keyframes cardIn{to{opacity:1;transform:translateY(0)}}
+
+/* stagger the animation for a nicer entrance */
+.services-col .services-catalog .product:nth-child(1){animation-delay:0s}
+.services-col .services-catalog .product:nth-child(2){animation-delay:0.05s}
+.services-col .services-catalog .product:nth-child(3){animation-delay:0.1s}
+.services-col .services-catalog .product:nth-child(4){animation-delay:0.15s}
+.services-col .services-catalog .product:nth-child(5){animation-delay:0.18s}
+.services-col .services-catalog .product:nth-child(6){animation-delay:0.22s}
+.services-col .services-catalog .product:nth-child(7){animation-delay:0.26s}
+
 .price{color:var(--muted)}
 .stars{color:#d98c8f;margin-top:8px}
 
@@ -122,25 +169,38 @@ a:hover{text-decoration:none;color:var(--accent)}
 .modal-thumbs img{width:84px;height:62px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:0.85;border:2px solid transparent}
 .modal-thumbs img.active{opacity:1;border-color:rgba(199,127,134,0.9)}
 
-/* Promo badge (cute coupon) */
-.promo-badge{position:absolute;right:28px;top:24px;width:140px;height:160px;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;text-align:center;padding:6px;box-shadow:0 22px 46px rgba(0,0,0,0.14);transform:translateZ(0);z-index:40}
-.promo-badge .promo-img{position:absolute;inset:auto;right:0;top:0;width:140px;height:160px;object-fit:cover;border-radius:14px;box-shadow:0 22px 46px rgba(0,0,0,0.12)}
-.promo-heart{display:flex;justify-content:center;margin-top:-6px}
-.promo-circle{width:112px;height:112px;background:#fff9f7;border-radius:999px;border:6px solid rgba(199,127,134,0.18);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;box-shadow:0 12px 30px rgba(0,0,0,0.08);margin:6px auto}
-.promo-circle .promo-line{margin:0;font-size:10px;line-height:1.05;color:#b36b6f;font-weight:700;letter-spacing:0.6px}
-.promo-circle .promo-line.small{font-size:9px;color:#8c565a;font-weight:600;margin-top:6px}
-.promo-circle .promo-line.big{font-size:12px;margin-top:6px;color:#a84f58}
-.promo-badge:hover .promo-circle{transform:translateY(-6px);transition:all 220ms cubic-bezier(.2,.9,.2,1)}
+/* Modern coupon promo */
+.promo-badge.coupon{position:absolute;right:28px;top:20px;width:240px;height:120px;display:block;z-index:60;cursor:pointer;transform:translateZ(0)}
+.coupon-inner{position:relative;width:100%;height:100%;display:flex;align-items:stretch;border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#fff,#fff);box-shadow:0 30px 60px rgba(16,12,12,0.12);border:1px solid rgba(16,12,12,0.04);transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s}
+.promo-badge.coupon:hover .coupon-inner{transform:translateY(-6px);box-shadow:0 44px 90px rgba(16,12,12,0.18)}
 
-/* small pulse accent */
-.promo-badge{animation:badge-pulse 6s ease-in-out infinite}
-@keyframes badge-pulse{0%{box-shadow:0 18px 40px rgba(0,0,0,0.12)}50%{box-shadow:0 28px 60px rgba(199,127,134,0.12)}100%{box-shadow:0 18px 40px rgba(0,0,0,0.12)}}
+.coupon-left{flex:1;padding:12px 14px;background:linear-gradient(180deg,rgba(243,214,216,0.03),rgba(250,240,240,0.02))}
+.coupon-top{font-size:10px;font-weight:700;color:#b36b6f;letter-spacing:0.8px}
+.coupon-mid{font-size:12px;font-weight:700;margin-top:2px;color:#6b4b4b}
+.coupon-small{font-size:11px;margin-top:6px;color:#8c565a}
+
+.coupon-right{width:96px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#f9e6e8,#f3d6d8);position:relative}
+.offer{font-family:'Playfair Display',serif;font-size:18px;color:#612a2a;font-weight:700;text-align:center;line-height:1}
+
+.coupon-cta{position:absolute;left:50%;transform:translateX(-50%) translateY(8px);bottom:-12px;background:#fff;border-radius:999px;padding:8px 12px;font-weight:700;color:#6b4b4b;text-align:center;border:1px solid rgba(16,12,12,0.05);box-shadow:0 10px 22px rgba(16,12,12,0.08);transition:transform .22s}
+.promo-badge.coupon:hover .coupon-cta{transform:translateX(-50%) translateY(-6px)}
+
+/* tear circles on left and right (visual coupon cutouts) */
+.promo-badge.coupon::before, .promo-badge.coupon::after{content:'';position:absolute;width:18px;height:18px;background:var(--bg);border-radius:50%;left:-9px;top:50%;transform:translateY(-50%);box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.promo-badge.coupon::after{left:auto;right:-9px}
+
+/* shimmer animation */
+.coupon-inner::after{content:'';position:absolute;inset:0;transform:translateX(-120%);background:linear-gradient(90deg,rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);opacity:0.6;pointer-events:none;animation:shimmer 3.2s linear infinite}
+@keyframes shimmer{0%{transform:translateX(-120%)}60%{transform:translateX(120%)}100%{transform:translateX(240%)}}
+
+/* small floating animation */
+.promo-badge.coupon{animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
 
 @media(max-width:720px){
-  .promo-badge{right:14px;top:14px;width:110px;height:132px}
-  .promo-circle{width:90px;height:90px}
-  .promo-circle .promo-line{font-size:9px}
-  .promo-circle .promo-line.big{font-size:10px}
+  .promo-badge.coupon{right:14px;top:14px;width:180px;height:110px}
+  .coupon-right{width:72px}
+  .coupon-cta{width:72px}
 }
 
 @media (max-width:900px){
@@ -159,4 +219,71 @@ a:hover{text-decoration:none;color:var(--accent)}
   .reviews{grid-template-columns:1fr}
   .main-nav{display:none}
   .header-inner{padding:0 10px}
+  .services-col .services-catalog{grid-template-columns:repeat(2,1fr);gap:14px}
+}
+
+@media (max-width:720px){
+  .logo-img{height:56px;max-height:64px}
+}
+
+/* Elegant looping float animation for the logo */
+@keyframes logoFloat{
+  0%{transform:translateY(0) rotate(0) scale(1)}
+  25%{transform:translateY(-8px) rotate(-0.8deg) scale(1.03)}
+  50%{transform:translateY(0) rotate(0) scale(1)}
+  75%{transform:translateY(-5px) rotate(0.8deg) scale(1.015)}
+  100%{transform:translateY(0) rotate(0) scale(1)}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .logo-img{animation:none;transition:none}
+}
+
+/* Notification icon (header) */
+.site-header{position:relative}
+.notif-wrap{position:absolute;right:18px;top:18px}
+.notif-btn{background:linear-gradient(180deg,#fff,#fff);border:1px solid rgba(0,0,0,0.04);padding:8px 10px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 20px rgba(16,12,12,0.06);color:#6b4b4b}
+.notif-btn i{font-size:18px}
+.notif-btn:focus{outline:2px solid rgba(199,127,134,0.22);outline-offset:3px}
+.notif-dot{position:absolute;right:6px;top:6px;width:10px;height:10px;background:#c77f86;border-radius:50%;box-shadow:0 0 0 4px rgba(199,127,134,0.1)}
+
+/* Coupon toast notification */
+.coupon-toast{position:fixed;right:18px;bottom:22px;width:320px;z-index:2000;display:flex;align-items:center;justify-content:flex-end;pointer-events:none;opacity:0;transform:translateY(12px) scale(.98);transition:opacity .28s ease,transform .28s ease}
+.coupon-toast[aria-hidden="false"]{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.coupon-toast-inner{background:linear-gradient(180deg,#fff,#fff);border-radius:12px;padding:12px 12px;box-shadow:0 20px 50px rgba(16,12,12,0.14);display:flex;gap:10px;align-items:center;border:1px solid rgba(16,12,12,0.04)}
+.toast-body{display:flex;gap:12px;align-items:center}
+.toast-emoji{font-size:28px;margin-top:2px}
+.coupon-code{background:linear-gradient(90deg,#f9e6e8,#f3d6d8);padding:4px 8px;border-radius:8px;color:#612a2a;font-weight:700}
+.toast-actions{margin-top:6px}
+.toast-close{position:absolute;right:6px;top:6px;border:0;background:transparent;font-size:18px;color:#6b4b4b;cursor:pointer}
+
+/* small screens: make toast full width near bottom */
+@media (max-width:520px){
+  .coupon-toast{left:12px;right:12px;width:auto;bottom:12px}
+}
+
+@media (max-width:1200px){
+  .services-col .services-catalog{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:800px){
+  .services-grid{flex-direction:column;gap:20px}
+  .services-col + .services-col{border-left:0;padding-left:0}
+  .services-col .services-catalog{grid-template-columns:repeat(2,1fr)}
+  .services-catalog .product{min-height:320px}
+}
+
+/* Custom pink scrollbar for modern browsers */
+/* Firefox */
+html{scrollbar-width:thin;scrollbar-color:#c77f86 #f7ebe9}
+
+/* WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:#f7ebe9;border-radius:999px}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#c77f86,#9e565c);border-radius:999px;border:3px solid #f7ebe9;box-shadow:inset 0 2px 6px rgba(0,0,0,0.08)}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#b46a70,#8a4046)}
+
+/* Keep scrollbars accessible for reduced-motion users */
+@media (prefers-reduced-motion: reduce){
+  ::-webkit-scrollbar-thumb{transition:none}
 }

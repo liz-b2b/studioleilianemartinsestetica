@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="100%" height="100%" rx="64" fill="#f3d6d8"/>
+  <g transform="translate(96,120)" fill="#612a2a" font-family="Playfair Display, serif" font-weight="700" font-size="240">
+    <text x="20" y="260">LM</text>
+  </g>
+</svg>
