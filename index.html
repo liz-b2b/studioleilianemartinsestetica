@@ -56,25 +56,25 @@
             <div class="services-col">
               <h3 class="services-title">ESTÉTICA FACIAL</h3>
               <ul class="services-list">
-                <li class="service-item"><i class="fa-solid fa-face-smile service-icon" aria-hidden="true"></i><span>Limpeza de Pele Personalizada</span></li>
-                <li class="service-item"><i class="fa-solid fa-shield-halved service-icon" aria-hidden="true"></i><span>Reparação de Barreira Cutânea</span></li>
-                <li class="service-item"><i class="fa-solid fa-droplet service-icon" aria-hidden="true"></i><span>Tratamentos Faciais com Peeling Químico</span></li>
-                <li class="service-item"><i class="fa-solid fa-circle-exclamation service-icon" aria-hidden="true"></i><span>Acne / Cicatriz de Acne</span></li>
-                <li class="service-item"><i class="fa-solid fa-sun service-icon" aria-hidden="true"></i><span>Manchas</span></li>
-                <li class="service-item"><i class="fa-solid fa-seedling service-icon" aria-hidden="true"></i><span>Rejuvenescimento</span></li>
-                <li class="service-item"><i class="fa-solid fa-needle service-icon" aria-hidden="true"></i><span>Microagulhamento</span></li>
+                 <li class="service-item" data-images="limpeza de pele.jpg"><i class="fa-solid fa-face-smile service-icon" aria-hidden="true"></i><span>Limpeza de Pele Personalizada</span></li>
+                 <li class="service-item" data-images="Reparação de Barreira Cutânea.jpg"><i class="fa-solid fa-shield-halved service-icon" aria-hidden="true"></i><span>Reparação de Barreira Cutânea</span></li>
+                 <li class="service-item" data-images="peeling quimico.jpg"><i class="fa-solid fa-droplet service-icon" aria-hidden="true"></i><span>Tratamentos Faciais com Peeling Químico</span></li>
+                 <li class="service-item" data-images="acne.jpg"><i class="fa-solid fa-circle-exclamation service-icon" aria-hidden="true"></i><span>Acne / Cicatriz de Acne</span></li>
+                 <li class="service-item" data-images="manchas.jpg"><i class="fa-solid fa-sun service-icon" aria-hidden="true"></i><span>Manchas</span></li>
+                 <li class="service-item" data-images="rejuvelhecimento.jpg"><i class="fa-solid fa-seedling service-icon" aria-hidden="true"></i><span>Rejuvenescimento</span></li>
+                 <li class="service-item" data-images="microagulhamento.jpg"><i class="fa-solid fa-needle service-icon" aria-hidden="true"></i><span>Microagulhamento</span></li>
               </ul>
             </div>
 
             <div class="services-col">
               <h3 class="services-title">ESTÉTICA CORPORAL</h3>
               <ul class="services-list">
-                <li class="service-item"><i class="fa-solid fa-heart-pulse service-icon" aria-hidden="true"></i><span>Drenagem Linfática</span></li>
-                <li class="service-item"><i class="fa-solid fa-spa service-icon" aria-hidden="true"></i><span>Massagem Relaxante</span></li>
-                <li class="service-item"><i class="fa-solid fa-fire service-icon" aria-hidden="true"></i><span>Massagem Modeladora</span></li>
-                <li class="service-item"><i class="fa-solid fa-hand-holding-water service-icon" aria-hidden="true"></i><span>Ventosaterapia</span></li>
-                <li class="service-item"><i class="fa-solid fa-wave-square service-icon" aria-hidden="true"></i><span>Ultrassom</span></li>
-                <li class="service-item"><i class="fa-solid fa-bolt service-icon" aria-hidden="true"></i><span>Corrente Russa</span></li>
+                 <li class="service-item" data-images="drenagem.jpg"><i class="fa-solid fa-heart-pulse service-icon" aria-hidden="true"></i><span>Drenagem Linfática</span></li>
+                 <li class="service-item" data-images="massagem relaxante.jpg"><i class="fa-solid fa-spa service-icon" aria-hidden="true"></i><span>Massagem Relaxante</span></li>
+                 <li class="service-item" data-images="modeladora.jpg"><i class="fa-solid fa-fire service-icon" aria-hidden="true"></i><span>Massagem Modeladora</span></li>
+                 <li class="service-item" data-images="ventosaterapia.jpg"><i class="fa-solid fa-hand-holding-water service-icon" aria-hidden="true"></i><span>Ventosaterapia</span></li>
+                 <li class="service-item" data-images="ultrasom.jpg"><i class="fa-solid fa-wave-square service-icon" aria-hidden="true"></i><span>Ultrassom</span></li>
+                 <li class="service-item" data-images="corrente rusa.jpg"><i class="fa-solid fa-bolt service-icon" aria-hidden="true"></i><span>Corrente Russa</span></li>
               </ul>
             </div>
           </div>
@@ -181,6 +181,46 @@
       </section>
 
     </main>
+
+    <!-- Service Modal (dynamic gallery) -->
+    <div id="service-modal" class="service-modal" aria-hidden="true">
+      <div class="service-modal-backdrop" data-close="true"></div>
+      <div class="service-modal-panel" role="dialog" aria-modal="true" aria-label="Galeria de Serviços">
+        <button class="modal-close" aria-label="Fechar">✕</button>
+        <div class="service-media">
+          <button class="media-prev" aria-label="Anterior">‹</button>
+          <div class="service-media-inner">
+            <img class="modal-image" src="" alt="Imagem do serviço" />
+            <div class="modal-caption">
+              <h4 id="modal-title"></h4>
+              <p id="modal-desc"></p>
+            </div>
+          </div>
+          <button class="media-next" aria-label="Próximo">›</button>
+        </div>
+        <div class="modal-thumbs" role="list" aria-label="Miniaturas"></div>
+      </div>
+    </div>
+
+    <!-- Service Modal (hidden by default) -->
+    <div id="service-modal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" aria-label="Fechar modal">&times;</button>
+        <div class="modal-body">
+          <div class="modal-media">
+            <button class="media-prev" aria-label="Imagem anterior">‹</button>
+            <img src="https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve" alt="" class="modal-image">
+            <button class="media-next" aria-label="Próxima imagem">›</button>
+          </div>
+          <div class="modal-info">
+            <h3 id="modal-title">Título do Serviço</h3>
+            <p id="modal-desc">Descrição do serviço será exibida aqui. Você pode adicionar imagens usando o atributo <code>data-images</code> no item correspondente.</p>
+            <div class="modal-thumbs" aria-hidden="false"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-inner">
