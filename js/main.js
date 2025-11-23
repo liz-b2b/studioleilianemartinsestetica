@@ -290,4 +290,53 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     }catch(e){/* ignore if IntersectionObserver unsupported */}
   })();
+
+  /* --- Service Worker registration & PWA install prompt --- */
+  // Register service worker for PWA functionality (requires HTTPS or localhost)
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('/sw.js').then(reg=>{
+        console.log('ServiceWorker registered:', reg.scope);
+      }).catch(err=>{
+        console.warn('ServiceWorker registration failed:', err);
+      });
+    });
+  }
+
+  // beforeinstallprompt handling: show a small install button when available
+  let deferredInstallPrompt = null;
+  const installBtn = document.createElement('button');
+  installBtn.className = 'pwa-install-btn';
+  installBtn.setAttribute('aria-hidden','true');
+  installBtn.title = 'Instalar o app';
+  installBtn.innerHTML = 'Instalar';
+  installBtn.style.display = 'none';
+  document.body.appendChild(installBtn);
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    // show our custom install button
+    installBtn.style.display = 'block';
+    installBtn.setAttribute('aria-hidden','false');
+  });
+
+  installBtn.addEventListener('click', async () => {
+    if(!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    const choice = await deferredInstallPrompt.userChoice;
+    // hide the button after choice
+    installBtn.style.display = 'none';
+    installBtn.setAttribute('aria-hidden','true');
+    deferredInstallPrompt = null;
+    console.log('PWA install choice:', choice && choice.outcome);
+  });
+
+  // hide the button if the app is already installed
+  window.addEventListener('appinstalled', () => {
+    installBtn.style.display = 'none';
+    installBtn.setAttribute('aria-hidden','true');
+    deferredInstallPrompt = null;
+  });
 });
