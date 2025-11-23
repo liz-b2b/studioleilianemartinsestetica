@@ -1,141 +1,169 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Studio Leiliane Martins Estética</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">Studio <span>Leiliane Martins</span> <small>Estética</small></div>
-      <nav class="main-nav">
-        <a href="#">HOME</a>
-        <a href="#">SERVIÇOS</a>
-        <a href="#">SOBRE</a>
-        <a href="#">BLOG</a>
-        <a href="#">CONTATO</a>
-      </nav>
-      <div class="utils">
-        <button class="icon">🔍</button>
-        <button class="icon">👤</button>
-        <button class="icon">🛒</button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-media">
-          <svg class="hero-img" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="placeholder">
-            <rect width="100%" height="100%" fill="#f9eef0"/>
-            <g fill="#f3d6d8">
-              <circle cx="120" cy="120" r="90"/>
-              <rect x="260" y="40" width="380" height="420" rx="8"/>
-            </g>
-          </svg>
-        </div>
-        <div class="hero-content">
-          <h1 class="hero-sub">Bright Vibes</h1>
-          <h2 class="hero-title">COLLECTION</h2>
-          <p class="hero-desc">Sofisticação &amp; Conveniência — tratamentos e cuidados pensados para realçar sua beleza.</p>
-          <a class="btn primary" href="#">AGENDE AGORA</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Studio Leiliane Martins Estética</title>
+    <meta name="description" content="Studio Leiliane Martins Estética — cuidados e tratamentos com sofisticação e delicadeza." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">Studio <span>Leiliane Martins</span> <small>Estética</small></div>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#">HOME</a>
+          <a href="#servicos">SERVIÇOS</a>
+          <a href="#sobre">SOBRE</a>
+          <a href="#blog">BLOG</a>
+          <a href="#contato">CONTATO</a>
+        </nav>
+        <div class="utils" aria-hidden="true">
+          <button class="icon">🔍</button>
+          <button class="icon">👤</button>
+          <button class="icon">🛒</button>
         </div>
       </div>
-    </section>
+    </header>
 
-    <section class="brand-statement">
-      <div class="container">
-        <p class="lead">Uma experiência estética premium, delicada e atemporal — beleza com toque de sofisticação.</p>
-      </div>
-    </section>
-
-    <section class="categories">
-      <div class="container">
-        <div class="cats">
-          <div class="cat">
-            <div class="cat-media">●</div>
-            <h3>Terapias Faciais</h3>
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <p class="eyebrow">Bright Vibes</p>
+            <h1 class="hero-title">COLLECTION</h1>
+            <p class="hero-desc">Sofisticação &amp; Conveniência — tratamentos e cuidados pensados para realçar sua beleza.</p>
+            <a class="btn primary" href="#servicos">AGENDE AGORA</a>
           </div>
-          <div class="cat">
-            <div class="cat-media">●</div>
-            <h3>Corpo & Spa</h3>
-          </div>
-          <div class="cat">
-            <div class="cat-media">●</div>
-            <h3>Tratamentos Avançados</h3>
+          <div class="hero-media">
+            <img src="https://images.unsplash.com/photo-1520975919848-9f3d4a0f7e5a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a4b3c0c" alt="modelo com roupa blush"/>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="featured">
-      <div class="container">
-        <h3 class="section-title">Destaques</h3>
-        <div class="grid products">
-          <!-- 8 placeholders -->
-          <article class="product"><div class="p-img"></div><h4>Peeling Suave</h4><span>R$ 180</span></article>
-          <article class="product"><div class="p-img"></div><h4>Hidratação Profunda</h4><span>R$ 120</span></article>
-          <article class="product"><div class="p-img"></div><h4>Microagulhamento</h4><span>R$ 420</span></article>
-          <article class="product"><div class="p-img"></div><h4>Design de Sobrancelhas</h4><span>R$ 60</span></article>
-          <article class="product"><div class="p-img"></div><h4>Massagem Relax</h4><span>R$ 160</span></article>
-          <article class="product"><div class="p-img"></div><h4>Limpeza de Pele</h4><span>R$ 90</span></article>
-          <article class="product"><div class="p-img"></div><h4>Depilação Facial</h4><span>R$ 50</span></article>
-          <article class="product"><div class="p-img"></div><h4>Tratamento Iluminador</h4><span>R$ 230</span></article>
+      <section class="brand-statement">
+        <div class="container">
+          <p class="lead">Uma experiência estética premium, delicada e atemporal — beleza com toque de sofisticação.</p>
+        </div>
+      </section>
+
+      <section class="categories" id="servicos">
+        <div class="container">
+          <div class="cats">
+            <article class="cat">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3f1b" alt="tratamento facial"/>
+              <h3>Terapias Faciais</h3>
+            </article>
+            <article class="cat">
+              <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8c3b7b" alt="spa corporal"/>
+              <h3>Corpo &amp; Spa</h3>
+            </article>
+            <article class="cat">
+              <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9e1" alt="tratamentos avançados"/>
+              <h3>Tratamentos Avançados</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured">
+        <div class="container">
+          <h2 class="section-title">Destaques</h2>
+          <div class="grid products" id="products">
+            <!-- Product items populated in HTML for simplicity -->
+            <article class="product">
+              <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9e1" alt="Peeling Suave"/>
+              <h4>Peeling Suave</h4>
+              <div class="price">R$ 180</div>
+              <div class="stars">★★★★★</div>
+            </article>
+            <article class="product">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0d5a7b" alt="Hidratação Profunda"/>
+              <h4>Hidratação Profunda</h4>
+              <div class="price">R$ 120</div>
+              <div class="stars">★★★★★</div>
+            </article>
+            <article class="product">
+              <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0a2b7f" alt="Microagulhamento"/>
+              <h4>Microagulhamento</h4>
+              <div class="price">R$ 420</div>
+              <div class="stars">★★★★★</div>
+            </article>
+            <article class="product">
+              <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b3f1d" alt="Design de Sobrancelhas"/>
+              <h4>Design de Sobrancelhas</h4>
+              <div class="price">R$ 60</div>
+              <div class="stars">★★★★★</div>
+            </article>
+            <article class="product">
+              <img src="https://images.unsplash.com/photo-1603398938378-1a69d2cb0b29?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1c7e9a" alt="Massagem Relax"/>
+              <h4>Massagem Relax</h4>
+              <div class="price">R$ 160</div>
+              <div class="stars">★★★★★</div>
+            </article>
+            <article class="product">
+              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b6e8a" alt="Limpeza de Pele"/>
+              <h4>Limpeza de Pele</h4>
+              <div class="price">R$ 90</div>
+              <div class="stars">★★★★★</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="subscribe">
+        <div class="container sub-inner">
+          <div class="sub-copy">
+            <h3 class="script">Subscribe for a special discount</h3>
+            <p>Receba novidades e ofertas exclusivas direto no seu e-mail.</p>
+          </div>
+          <form id="subscribe-form" class="sub-form" novalidate>
+            <input id="email" type="email" placeholder="Seu e-mail" required>
+            <button class="btn" type="submit">Inscrever</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <h2 class="section-title">Avaliações</h2>
+          <div class="grid reviews">
+            <blockquote class="review">“Atendimento impecável e resultados excelentes.”<cite>— Maria</cite></blockquote>
+            <blockquote class="review">“Ambiente acolhedor e profissionais muito atenciosos.”<cite>— Ana</cite></blockquote>
+            <blockquote class="review">“Melhorei a autoestima depois do tratamento!”<cite>— Júlia</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="instagram">
+        <div class="container">
+          <h2 class="section-title">Stay In Touch</h2>
+          <div class="grid insta-grid">
+            <a href="#" class="insta"><img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="insta1"></a>
+            <a href="#" class="insta"><img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="insta2"></a>
+            <a href="#" class="insta"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="insta3"></a>
+            <a href="#" class="insta"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" alt="insta4"></a>
+            <a href="#" class="insta"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=5" alt="insta5"></a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <strong>Studio Leiliane Martins Estética</strong> — Todos os direitos reservados.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Pinterest">📌</a>
         </div>
       </div>
-    </section>
+    </footer>
 
-    <section class="subscribe">
-      <div class="container sub-inner">
-        <div class="sub-copy">
-          <h3>Assine e ganhe um desconto especial</h3>
-          <p>Receba novidades e ofertas exclusivas direto no seu e-mail.</p>
-        </div>
-        <form class="sub-form" onsubmit="event.preventDefault(); alert('Obrigado!');">
-          <input type="email" placeholder="Seu e-mail" required>
-          <button class="btn">Inscrever</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="testimonials">
-      <div class="container">
-        <h3 class="section-title">Avaliações</h3>
-        <div class="grid reviews">
-          <blockquote class="review">“Atendimento impecável e resultados excelentes.”<cite>— Maria</cite></blockquote>
-          <blockquote class="review">“Ambiente acolhedor e profissionais muito atenciosos.”<cite>— Ana</cite></blockquote>
-          <blockquote class="review">“Melhorei a autoestima depois do tratamento!”<cite>— Júlia</cite></blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section class="instagram">
-      <div class="container">
-        <h3 class="section-title">Stay In Touch</h3>
-        <div class="grid insta-grid">
-          <div class="insta"></div>
-          <div class="insta"></div>
-          <div class="insta"></div>
-          <div class="insta"></div>
-          <div class="insta"></div>
-          <div class="insta"></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <strong>Studio Leiliane Martins Estética</strong> — Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
