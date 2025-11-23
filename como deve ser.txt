@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamore Boutique - Coleção Bright Vibes</title>
+    <!-- Carregamento do Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuração Customizada do Tailwind para Cores e Fontes -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Cores inspiradas no tom blush/rose da imagem
+                        'lamore-bg': '#FDF9F8', // Fundo principal muito claro
+                        'lamore-light': '#FAEAE8', // Fundo de seção leve (blush claro)
+                        'lamore-accent': '#C59A9A', // Cor de acento (rosa empoeirado)
+                        'lamore-dark-text': '#333333', // Texto principal (não preto puro)
+                        'lamore-header-text': '#1D1D1D', // Texto de cabeçalho
+                    },
+                    fontFamily: {
+                        // Fontes para o site
+                        sans: ['Inter', 'sans-serif'],
+                        // Usado para simular o estilo manuscrito do título
+                        script: ['Great Vibes', 'cursive'], 
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Importação das fontes -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Great+Vibes&display=swap');
+        body {
+            background-color: #FDF9F8; /* lamore-bg */
+            color: #333333; /* lamore-dark-text */
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-6 flex flex-col items-center">
+            <!-- Logo e Nome da Boutique -->
+            <a href="#" class="text-3xl tracking-widest font-serif text-lamore-header-text mb-4">
+                LAMORE
+                <span class="block text-xs text-lamore-accent tracking-widest mt-1">
+                    • BOUTIQUE •
+                </span>
+            </a>
+
+            <!-- Menu Principal: faixa rose full-width abaixo do header branco -->
+        </div>
+        <nav class="w-full bg-lamore-light">
+            <div class="container mx-auto px-4 py-3 flex justify-center space-x-6 text-sm font-medium tracking-wider">
+                <a href="#" class="text-lamore-header-text hover:text-lamore-accent transition duration-300 uppercase">Home</a>
+                <a href="#shop" class="text-lamore-header-text hover:text-lamore-accent transition duration-300 uppercase">Shop</a>
+                <a href="#faq" class="text-lamore-header-text hover:text-lamore-accent transition duration-300 uppercase">FAQ</a>
+                <a href="#blog" class="text-lamore-header-text hover:text-lamore-accent transition duration-300 uppercase">Blog</a>
+                <a href="#contato" class="text-lamore-header-text hover:text-lamore-accent transition duration-300 uppercase">Contact Us</a>
+            </div>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Hero (Banner Principal) -->
+        <section class="relative h-[60vh] md:h-[80vh] bg-lamore-light overflow-hidden flex items-center justify-center text-center shadow-lg" id="hero">
+            <!-- Imagem de Fundo (Placeholder para a modelo) -->
+            <img src="https://placehold.co/1200x800/FDF9F8/C59A9A?text=Banner+Estetico+Feminino" 
+                 alt="Coleção Bright Vibes" 
+                 class="absolute inset-0 w-full h-full object-cover opacity-70"
+            >
+            
+            <!-- Sobreposição de Conteúdo Central -->
+            <div class="relative z-10 p-6 bg-white/70 backdrop-blur-sm rounded-xl shadow-2xl max-w-lg mx-auto border border-lamore-accent/30">
+                <h2 class="font-script text-5xl md:text-7xl text-lamore-accent mb-4 leading-none">
+                    Bright Vibes
+                </h2>
+                <h1 class="text-xl md:text-3xl font-bold tracking-widest text-lamore-header-text uppercase mb-6">
+                    COLLECTION
+                </h1>
+                <a href="#shop" class="inline-block px-8 py-3 text-sm bg-lamore-accent text-white font-semibold rounded-full tracking-wider hover:bg-lamore-dark-text transition duration-300 transform hover:scale-105 shadow-md">
+                    SHOP NOW
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção Sofisticação & Conveniência -->
+        <section class="py-16 md:py-20 text-center bg-white border-b border-lamore-light">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-2xl font-bold tracking-widest text-lamore-header-text uppercase mb-4">
+                    Sofisticação & Conveniência
+                </h2>
+                <p class="text-base text-gray-500 mb-8 max-w-2xl mx-auto">
+                    Nós acreditamos que estilo e conforto devem andar de mãos dadas. Nossa curadoria garante peças que elevam seu estilo sem comprometer o seu dia a dia. Encontre o equilíbrio perfeito.
+                </p>
+                <a href="#contato" class="text-lamore-accent hover:text-lamore-dark-text font-medium border-b border-lamore-accent/50 pb-1 transition duration-300">
+                    Saber Mais na Lamore Boutique
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção de Categorias/Coleções em Destaque (3 Imagens) -->
+        <section class="py-16 md:py-20 bg-lamore-bg" id="categorias">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Categoria 1: Roupa de Cima -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl">
+                        <img src="https://placehold.co/400x400/FAEAE8/C59A9A?text=Vestuário" 
+                             alt="Vestuário em Destaque" 
+                             class="w-full h-auto object-cover transition duration-500 group-hover:scale-105"
+                        >
+                        <a href="#" class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition duration-500">
+                            <span class="text-white text-lg font-bold tracking-widest uppercase border border-white px-4 py-2 rounded-lg">
+                                Ver Tops
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <!-- Categoria 2: Acessórios -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl">
+                        <img src="https://placehold.co/400x400/FAEAE8/C59A9A?text=Acessórios" 
+                             alt="Acessórios em Destaque" 
+                             class="w-full h-auto object-cover transition duration-500 group-hover:scale-105"
+                        >
+                        <a href="#" class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition duration-500">
+                            <span class="text-white text-lg font-bold tracking-widest uppercase border border-white px-4 py-2 rounded-lg">
+                                Ver Acessórios
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <!-- Categoria 3: Decoração/Home Goods -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-xl">
+                        <img src="https://placehold.co/400x400/FAEAE8/C59A9A?text=Home+Decor" 
+                             alt="Decoração em Destaque" 
+                             class="w-full h-auto object-cover transition duration-500 group-hover:scale-105"
+                        >
+                        <a href="#" class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition duration-500">
+                            <span class="text-white text-lg font-bold tracking-widest uppercase border border-white px-4 py-2 rounded-lg">
+                                Ver Casa & Vela
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Produtos em Destaque (Featured Products) -->
+        <section class="py-16 md:py-24 bg-white" id="shop">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-wider text-lamore-header-text uppercase">
+                        PRODUTOS EM DESTAQUE
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8">
+                    <!-- Produto Item 1 -->
+                    <div class="group text-center">
+                        <div class="overflow-hidden rounded-lg mb-3 shadow-md border border-gray-100">
+                            <img src="https://placehold.co/300x380/FAEAE8/C59A9A?text=T-Shirt" 
+                                 alt="T-Shirt Estampada" 
+                                 class="w-full h-auto object-cover transition duration-300 group-hover:scale-105"
+                            >
+                        </div>
+                        <p class="text-sm text-lamore-dark-text font-medium">T-Shirt Boho Chic</p>
+                        <p class="text-sm text-lamore-accent font-semibold">49,90 €</p>
+                    </div>
+
+                    <!-- Produto Item 2 -->
+                    <div class="group text-center">
+                        <div class="overflow-hidden rounded-lg mb-3 shadow-md border border-gray-100">
+                            <img src="https://placehold.co/300x380/FAEAE8/C59A9A?text=Vela+Aromatica" 
+                                 alt="Vela Aromática Artesanal" 
+                                 class="w-full h-auto object-cover transition duration-300 group-hover:scale-105"
+                            >
+                        </div>
+                        <p class="text-sm text-lamore-dark-text font-medium">Vela Aroma Doce</p>
+                        <p class="text-sm text-lamore-accent font-semibold">24,50 €</p>
+                    </div>
+
+                    <!-- Produto Item 3 -->
+                    <div class="group text-center">
+                        <div class="overflow-hidden rounded-lg mb-3 shadow-md border border-gray-100">
+                            <img src="https://placehold.co/300x380/FAEAE8/C59A9A?text=Crop+Top" 
+                                 alt="Crop Top Minimalista" 
+                                 class="w-full h-auto object-cover transition duration-300 group-hover:scale-105"
+                            >
+                        </div>
+                        <p class="text-sm text-lamore-dark-text font-medium">Crop Top Essencial</p>
+                        <p class="text-sm text-lamore-accent font-semibold">35,00 €</p>
+                    </div>
+
+                    <!-- Produto Item 4 -->
+                    <div class="group text-center">
+                        <div class="overflow-hidden rounded-lg mb-3 shadow-md border border-gray-100">
+                            <img src="https://placehold.co/300x380/FAEAE8/C59A9A?text=Mala+Pequena" 
+                                 alt="Mala de Ombro" 
+                                 class="w-full h-auto object-cover transition duration-300 group-hover:scale-105"
+                            >
+                        </div>
+                        <p class="text-sm text-lamore-dark-text font-medium">Mala de Ombro Clássica</p>
+                        <p class="text-sm text-lamore-accent font-semibold">79,99 €</p>
+                    </div>
+
+                    <!-- Mais Produtos para Preencher o Grid 4x2 -->
+                    <!-- Produto Item 5 -->
+                    <div class="group text-center">
+                        <div class="overflow-hidden rounded-lg mb-3 shadow-md border border-gray-100">
+                            <img src="https://placehold.co/300x380/FAEAE8/C59A9A?text=T-Shirt+Graphic" 
+                                 alt="T-Shirt Gráfica" 
+                                 class="w-full h-auto object-cover transition duration-300 group-hover:scale-105"
+                            >
+                        </div>
+                        <p class="text-sm text-lamore-dark-text font-medium">T-Shirt Sunset Vibe</p>
+                        <p class="text-sm text-lamore-accent font-semibold">49,90 €</p>
+                    </div>
+
+                    <!-- Produto Item 6 -->
+                    <div class="group text-center">
+                        <div class="overflow-hidden rounded-lg mb-3 shadow-md border border-gray-100">
+                            <img src="https://placehold.co/300x380/FAEAE8/C59A9A?text=Garrafa+de+Água" 
+                                 alt="Garrafa de Água Estética" 
+                                 class="w-full h-auto object-cover transition duration-300 group-hover:scale-105"
+                            >
+                        </div>
+                        <p class="text-sm text-lamore-dark-text font-medium">Garrafa Reutilizável</p>
+                        <p class="text-sm text-lamore-accent font-semibold">19,99 €</p>
+                    </div>
+
+                    <!-- Produto Item 7 -->
+                    <div class="group text-center">
+                        <div class="overflow-hidden rounded-lg mb-3 shadow-md border border-gray-100">
+                            <img src="https://placehold.co/300x380/FAEAE8/C59A9A?text=Saia+Mini" 
+                                 alt="Mini Saia de Linho" 
+                                 class="w-full h-auto object-cover transition duration-300 group-hover:scale-105"
+                            >
+                        </div>
+                        <p class="text-sm text-lamore-dark-text font-medium">Mini Saia Linho</p>
+                        <p class="text-sm text-lamore-accent font-semibold">59,00 €</p>
+                    </div>
+
+                    <!-- Produto Item 8 -->
+                    <div class="group text-center">
+                        <div class="overflow-hidden rounded-lg mb-3 shadow-md border border-gray-100">
+                            <img src="https://placehold.co/300x380/FAEAE8/C59A9A?text=Vela+Grande" 
+                                 alt="Vela de Design" 
+                                 class="w-full h-auto object-cover transition duration-300 group-hover:scale-105"
+                            >
+                        </div>
+                        <p class="text-sm text-lamore-dark-text font-medium">Vela Círculo Mágico</p>
+                        <p class="text-sm text-lamore-accent font-semibold">39,99 €</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner de Subscrição/Desconto -->
+        <section class="py-16 md:py-20 bg-lamore-light border-t border-b border-lamore-accent/30">
+            <div class="container mx-auto px-4 text-center">
+                <div class="flex justify-center mb-4">
+                    <!-- Icone de Destaque -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-lamore-accent" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-lamore-header-text mb-6">
+                    Subscreva para um <span class="text-lamore-accent">desconto especial</span>
+                </h2>
+                <form class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="Introduza o seu email" class="w-full sm:w-2/3 px-4 py-3 rounded-full border-2 border-lamore-accent/50 focus:border-lamore-accent focus:ring-lamore-accent/50 transition duration-300 bg-white" required>
+                    <button type="submit" class="w-full sm:w-1/3 px-6 py-3 bg-lamore-accent text-white font-semibold rounded-full hover:bg-lamore-dark-text transition duration-300 shadow-md">
+                        Subscrever
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Seção de Depoimentos -->
+        <section class="py-16 md:py-24 bg-white" id="depoimentos">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-wider text-lamore-header-text uppercase">
+                        O Que Nossos Clientes Dizem
+                    </h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Depoimento 1 -->
+                    <div class="p-6 bg-lamore-bg rounded-xl shadow-lg border border-lamore-accent/10">
+                        <div class="text-yellow-500 mb-3 text-lg">★★★★★</div>
+                        <p class="text-gray-600 italic mb-4">
+                            "A qualidade das peças é incomparável! O atendimento ao cliente foi super atencioso e a entrega, rapidíssima. Tornou-se a minha loja favorita online."
+                        </p>
+                        <p class="font-semibold text-lamore-dark-text">- Sofia D. (Lisboa)</p>
+                    </div>
+
+                    <!-- Depoimento 2 -->
+                    <div class="p-6 bg-lamore-bg rounded-xl shadow-lg border border-lamore-accent/10">
+                        <div class="text-yellow-500 mb-3 text-lg">★★★★★</div>
+                        <p class="text-gray-600 italic mb-4">
+                            "Adoro a curadoria de velas e decoração. Trouxe um toque de sofisticação e conforto para a minha casa. Voltarei a comprar em breve!"
+                        </p>
+                        <p class="font-semibold text-lamore-dark-text">- Ricardo P. (Porto)</p>
+                    </div>
+
+                    <!-- Depoimento 3 -->
+                    <div class="p-6 bg-lamore-bg rounded-xl shadow-lg border border-lamore-accent/10">
+                        <div class="text-yellow-500 mb-3 text-lg">★★★★★</div>
+                        <p class="text-gray-600 italic mb-4">
+                            "Comprei um vestido para um evento e recebi imensos elogios. O caimento é perfeito. Recomendo a Lamore a todas as minhas amigas."
+                        </p>
+                        <p class="font-semibold text-lamore-dark-text">- Marta V. (Faro)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção "Stay In Touch" (Galeria Instagram/Rodapé superior) -->
+        <section class="py-12 md:py-16 bg-lamore-light border-t border-lamore-accent/30" id="contato">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold tracking-wider text-lamore-header-text uppercase">
+                        Siga-nos no Instagram
+                    </h3>
+                    <p class="text-sm text-lamore-accent font-medium">@lamoreboutiquept</p>
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                    <!-- Imagem 1 -->
+                    <img src="https://placehold.co/300x300/FDF9F8/C59A9A?text=Insta+1" alt="Foto Instagram 1" class="w-full h-auto object-cover rounded-md shadow-md hover:opacity-80 transition duration-300">
+                    <!-- Imagem 2 -->
+                    <img src="https://placehold.co/300x300/FDF9F8/C59A9A?text=Insta+2" alt="Foto Instagram 2" class="w-full h-auto object-cover rounded-md shadow-md hover:opacity-80 transition duration-300">
+                    <!-- Imagem 3 -->
+                    <img src="https://placehold.co/300x300/FDF9F8/C59A9A?text=Insta+3" alt="Foto Instagram 3" class="w-full h-auto object-cover rounded-md shadow-md hover:opacity-80 transition duration-300">
+                    <!-- Imagem 4 -->
+                    <img src="https://placehold.co/300x300/FDF9F8/C59A9A?text=Insta+4" alt="Foto Instagram 4" class="w-full h-auto object-cover rounded-md shadow-md hover:opacity-80 transition duration-300 hidden sm:block">
+                    <!-- Imagem 5 -->
+                    <img src="https://placehold.co/300x300/FDF9F8/C59A9A?text=Insta+5" alt="Foto Instagram 5" class="w-full h-auto object-cover rounded-md shadow-md hover:opacity-80 transition duration-300 hidden sm:block">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-white py-8 border-t border-gray-100">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Lamore Boutique. Todos os direitos reservados. | Design Estético e Funcional.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
