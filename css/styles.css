@@ -15,16 +15,19 @@ body{margin:0;font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto
 .logo{font-family:'Playfair Display',serif;font-size:20px}
 .logo span{display:block;font-weight:600;font-size:24px}
 .logo small{display:block;font-size:12px;color:var(--muted)}
-.main-nav{display:flex;gap:20px}
-.main-nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:13px}
+.main-nav{background:transparent;border-top:1px solid rgba(0,0,0,0.03);border-bottom:1px solid rgba(0,0,0,0.03)}
+.nav-inner{display:flex;gap:22px;justify-content:center;padding:10px 20px}
+.main-nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:13px}
 .icon{background:transparent;border:0;font-size:18px}
 
-.hero{padding:48px 0}
-.hero-inner{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center}
-.hero-media img{width:100%;border-radius:12px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+.header-top{text-align:center;padding-top:18px;padding-bottom:8px}
+
+.hero{padding:120px 0;background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
+.hero-overlay{background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.65));padding:40px 0}
+.hero-card{max-width:640px;margin:0 auto;padding:36px;background:rgba(255,255,255,0.85);border-radius:8px;border:1px solid rgba(0,0,0,0.06);text-align:center}
 .eyebrow{font-family:'Great Vibes',cursive;font-size:34px;color:var(--primary);margin:0}
 .hero-title{font-family:'Playfair Display',serif;font-size:44px;margin:6px 0}
-.hero-desc{color:var(--muted);max-width:560px}
+.hero-desc{color:var(--muted);max-width:560px;margin:0 auto}
 .btn{display:inline-block;padding:12px 22px;border-radius:26px;background:transparent;border:1px solid rgba(0,0,0,0.06);text-decoration:none;color:var(--text);cursor:pointer}
 .btn.primary{background:var(--primary);border:0;font-weight:700}
 
@@ -32,14 +35,15 @@ body{margin:0;font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto
 .brand-statement .lead{max-width:760px;margin:0 auto;color:var(--muted)}
 
 .categories{padding:18px 0}
-.cats{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
-.cat{width:220px;text-align:center}
-.cat img{width:220px;height:220px;object-fit:cover;border-radius:12px}
-.cat h3{margin:12px 0 0}
+.cats{display:flex;gap:28px;justify-content:center;flex-wrap:wrap}
+.cat{width:220px;text-align:center;position:relative}
+.scallop{width:220px;height:220px;border-radius:50%;overflow:hidden;display:inline-block;box-shadow:0 8px 20px rgba(0,0,0,0.06);border:8px solid rgba(243,214,216,0.6)}
+.scallop img{width:100%;height:100%;object-fit:cover;display:block}
+.ribbon{margin-top:10px;background:var(--primary);display:inline-block;padding:10px 22px;border-radius:22px;color:var(--text);font-weight:600}
 
 .section-title{letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin:8px 0 18px;font-size:13px}
 .featured{padding:26px 0}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .product{background:#fff;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,0.03)}
 .product img{width:100%;height:160px;object-fit:cover}
 .product .p-body{padding:12px}
@@ -47,28 +51,32 @@ body{margin:0;font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto
 .price{color:var(--muted)}
 .stars{color:#d98c8f;margin-top:8px}
 
-.subscribe{background:var(--primary);padding:24px 0;border-radius:8px;margin:26px 0}
-.sub-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.script{font-family:'Great Vibes',cursive;margin:0}
+.subscribe.band{background:var(--primary);padding:28px 0;margin:28px 0;border-radius:6px}
+.sub-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.sub-visual img{width:120px;height:120px;object-fit:cover;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06)}
+.script{font-family:'Great Vibes',cursive;margin:0;color:#6b4b4b}
 .sub-form{display:flex;gap:8px}
-.sub-form input{padding:12px 14px;border-radius:26px;border:0;min-width:220px}
-.sub-form .btn{border-radius:26px;padding:12px 18px;background:#222;color:#fff;border:0}
+.sub-form input{padding:12px 14px;border-radius:22px;border:0;min-width:220px}
+.sub-form .btn{border-radius:22px;padding:12px 18px;background:#222;color:#fff;border:0}
 
 .testimonials{padding:24px 0}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .review{background:#fff;padding:16px;border-radius:10px;border:1px solid rgba(0,0,0,0.03)}
 .review cite{display:block;margin-top:10px;color:var(--muted);font-size:13px}
+.review .rating{color:#d98c8f;font-size:18px}
+.review .sig{font-family:'Playfair Display',serif;font-size:12px;color:var(--muted);margin-top:8px}
 
 .instagram{padding:18px 0}
-.insta-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.insta img{width:100%;height:90px;object-fit:cover;border-radius:8px}
+.insta-grid{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.insta{flex:0 0 120px}
+.insta img{width:120px;height:90px;object-fit:cover;border-radius:6px}
 
 .site-footer{padding:28px 0;border-top:1px solid rgba(0,0,0,0.04);text-align:center;color:var(--muted)}
 
 @media (max-width:980px){
-  .hero-inner{grid-template-columns:1fr}
+  .hero{padding:80px 0}
   .products{grid-template-columns:repeat(2,1fr)}
-  .insta-grid{grid-template-columns:repeat(3,1fr)}
+  .insta-grid{display:flex}
   .sub-inner{flex-direction:column;align-items:stretch}
 }
 @media (max-width:520px){

@@ -12,34 +12,30 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="container header-inner">
+      <div class="container header-top">
         <div class="logo">Studio <span>Leiliane Martins</span> <small>Estética</small></div>
-        <nav class="main-nav" aria-label="Navegação principal">
+      </div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <div class="container nav-inner">
           <a href="#">HOME</a>
           <a href="#servicos">SERVIÇOS</a>
           <a href="#sobre">SOBRE</a>
           <a href="#blog">BLOG</a>
           <a href="#contato">CONTATO</a>
-        </nav>
-        <div class="utils" aria-hidden="true">
-          <button class="icon">🔍</button>
-          <button class="icon">👤</button>
-          <button class="icon">🛒</button>
         </div>
-      </div>
+      </nav>
     </header>
 
     <main>
-      <section class="hero" id="home">
-        <div class="container hero-inner">
-          <div class="hero-content">
-            <p class="eyebrow">Bright Vibes</p>
-            <h1 class="hero-title">COLLECTION</h1>
-            <p class="hero-desc">Sofisticação &amp; Conveniência — tratamentos e cuidados pensados para realçar sua beleza.</p>
-            <a class="btn primary" href="#servicos">AGENDE AGORA</a>
-          </div>
-          <div class="hero-media">
-            <img src="https://images.unsplash.com/photo-1520975919848-9f3d4a0f7e5a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a4b3c0c" alt="modelo com roupa blush"/>
+      <section class="hero" id="home" style="background-image:url('https://images.unsplash.com/photo-1520975919848-9f3d4a0f7e5a?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a4b3c0c')">
+        <div class="hero-overlay">
+          <div class="container">
+            <div class="hero-card">
+              <p class="eyebrow">Bright Vibes</p>
+              <h1 class="hero-title">COLLECTION</h1>
+              <p class="hero-desc">Sofisticação &amp; Conveniência — tratamentos e cuidados pensados para realçar sua beleza.</p>
+              <a class="btn primary" href="#servicos">AGENDE AGORA</a>
+            </div>
           </div>
         </div>
       </section>
@@ -54,16 +50,22 @@
         <div class="container">
           <div class="cats">
             <article class="cat">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3f1b" alt="tratamento facial"/>
-              <h3>Terapias Faciais</h3>
+              <div class="scallop">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3f1b" alt="tratamento facial"/>
+              </div>
+              <div class="ribbon">Terapias Faciais</div>
             </article>
             <article class="cat">
-              <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8c3b7b" alt="spa corporal"/>
-              <h3>Corpo &amp; Spa</h3>
+              <div class="scallop">
+                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8c3b7b" alt="spa corporal"/>
+              </div>
+              <div class="ribbon">Corpo &amp; Spa</div>
             </article>
             <article class="cat">
-              <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9e1" alt="tratamentos avançados"/>
-              <h3>Tratamentos Avançados</h3>
+              <div class="scallop">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9e1" alt="tratamentos avançados"/>
+              </div>
+              <div class="ribbon">Tratamentos Avançados</div>
             </article>
           </div>
         </div>
@@ -114,8 +116,11 @@
         </div>
       </section>
 
-      <section class="subscribe">
+      <section class="subscribe band">
         <div class="container sub-inner">
+          <div class="sub-visual">
+            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="bouquet"/>
+          </div>
           <div class="sub-copy">
             <h3 class="script">Subscribe for a special discount</h3>
             <p>Receba novidades e ofertas exclusivas direto no seu e-mail.</p>
