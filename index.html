@@ -53,27 +53,29 @@
     <main>
       <section class="hero" id="home" style="background-image:url('limpeza%20de%20pele.jpg')">
         <!-- Modern animated coupon -->
-        <a href="#contato" class="promo-badge coupon" role="note" aria-label="Cupom promocional: SPA Labial">
+        <!-- CUPOM DESATIVADO TEMPORARIAMENTE
+        <a href="#contato" class="promo-badge coupon" role="note" aria-label="Promoção exclusiva: Cuide-se com a gente">
           <div class="coupon-inner" aria-hidden="false">
             <div class="coupon-left">
-              <div class="coupon-top">NA COMPRA DE QUALQUER</div>
-              <div class="coupon-mid">PROCEDIMENTO FACIAL</div>
-              <div class="coupon-small">VOCÊ GANHA</div>
+              <div class="coupon-top">REALIZE SEU</div>
+              <div class="coupon-mid">AUTOSSOMA</div>
+              <div class="coupon-small">COM AMOR</div>
             </div>
             <div class="coupon-right">
-              <img src="img/fotonocupom.jpg" alt="Spa Labial" class="coupon-photo">
-              <div class="offer offer-overlay">SPA<br>LABIAL</div>
+              <img src="servicos/massagem-relaxante.jpg" alt="Massagem Relaxante" class="coupon-photo">
+              <div class="offer offer-overlay">TOQUE<br>ESPECIAL</div>
             </div>
             <div class="coupon-cta">AGENDAR</div>
           </div>
         </a>
+        -->
         <div class="hero-overlay">
           <div class="container">
             <div class="hero-card">
               <p class="eyebrow">Bright Vibes</p>
               <h1 class="hero-title">COLLECTION</h1>
               <p class="hero-desc">Sofisticação &amp; Conveniência — tratamentos e cuidados pensados para realçar sua beleza.</p>
-              <a class="btn primary" href="#servicos">AGENDE AGORA</a>
+              <a class="btn primary" href="https://wa.me/5561992207305?text=Ol%C3%A1%2C%20Leiliane!%20Vim%20pelo%20site%20e%20quero%20conhecer%20mais%20sobre%20os%20seus%20servi%C3%A7os" target="_blank" rel="noopener">AGENDE AGORA</a>
             </div>
           </div>
         </div>
@@ -87,11 +89,13 @@
 
       <section class="services" id="servicos">
         <div class="container">
-          <div class="services-grid">
+          <div class="services-grid services-stacked">
             <div class="services-col">
               <h3 class="services-title">ESTÉTICA FACIAL</h3>
-              <div class="products services-catalog">
-                <article class="product service-card" tabindex="0" data-images="limpeza-de-pele.jpg">
+              <div class="carousel-container facial-carousel">
+                <button class="carousel-btn carousel-prev" aria-label="Anterior">‹</button>
+                <div class="carousel-track">
+                <article class="product service-card carousel-item" data-images="limpeza-de-pele.jpg">
                   <img src="servicos/limpeza-de-pele.jpg" alt="Limpeza de Pele Personalizada" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
                   <div class="p-body">
                     <h4><span>Limpeza de Pele Personalizada</span></h4>
@@ -99,94 +103,86 @@
                   </div>
                 </article>
 
-                <article class="product service-card" tabindex="0" data-images="reparacao-de-barreira-cutanea.jpg">
+                <article class="product service-card carousel-item" data-images="reparacao-de-barreira-cutanea.jpg">
                   <img src="servicos/reparacao-de-barreira-cutanea.jpg" alt="Reparação de Barreira Cutânea" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
                   <div class="p-body"><h4><span>Reparação de Barreira Cutânea</span></h4>
                     <button class="btn btn-know" type="button">CONHECER</button>
                   </div>
                 </article>
 
-                <article class="product service-card" tabindex="0" data-images="peeling-quimico.jpg">
+                <article class="product service-card carousel-item" data-images="peeling-quimico.jpg">
                   <img src="servicos/peeling-quimico.jpg" alt="Peeling Químico" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
                   <div class="p-body"><h4><span>Tratamentos Faciais com Peeling Químico</span></h4>
                     <button class="btn btn-know" type="button">CONHECER</button>
                   </div>
                 </article>
 
-                <article class="product service-card" tabindex="0" data-images="acne.jpg">
+                <article class="product service-card carousel-item" data-images="acne.jpg">
                   <img src="servicos/acne.jpg" alt="Acne / Cicatriz de Acne" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
                   <div class="p-body"><h4><span>Acne / Cicatriz de Acne</span></h4>
                     <button class="btn btn-know" type="button">CONHECER</button>
                   </div>
                 </article>
 
-                <article class="product service-card" tabindex="0" data-images="limpeza-de-pele.jpg">
+                <article class="product service-card carousel-item" data-images="limpeza-de-pele.jpg">
                   <img src="servicos/limpeza-de-pele.jpg" alt="Manchas" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
                   <div class="p-body"><h4><span>Manchas</span></h4>
                     <button class="btn btn-know" type="button">CONHECER</button>
                   </div>
                 </article>
 
-                <article class="product service-card" tabindex="0" data-images="rejuvelhecimento.jpg">
+                <article class="product service-card carousel-item" data-images="rejuvelhecimento.jpg">
                   <img src="servicos/rejuvelhecimento.jpg" alt="Rejuvenescimento" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
                   <div class="p-body"><h4><span>Rejuvenescimento</span></h4>
                     <button class="btn btn-know" type="button">CONHECER</button>
                   </div>
                 </article>
 
-                <article class="product service-card" tabindex="0" data-images="microagulhamento.jpg">
+                <article class="product service-card carousel-item" data-images="microagulhamento.jpg">
                   <img src="servicos/microagulhamento.jpg" alt="Microagulhamento" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
                   <div class="p-body"><h4><span>Microagulhamento</span></h4>
                     <button class="btn btn-know" type="button">CONHECER</button>
                   </div>
                 </article>
+                </div>
+                <button class="carousel-btn carousel-next" aria-label="Próximo">›</button>
               </div>
             </div>
 
             <div class="services-col">
               <h3 class="services-title">ESTÉTICA CORPORAL</h3>
-              <div class="products services-catalog">
-                <article class="product service-card" tabindex="0" data-images="limpeza-de-pele.jpg">
+              <div class="carousel-container corporal-carousel">
+                <button class="carousel-btn carousel-prev" aria-label="Anterior">‹</button>
+                <div class="carousel-track">
+                <article class="product service-card carousel-item" data-images="limpeza-de-pele.jpg">
                   <img src="servicos/limpeza-de-pele.jpg" alt="Drenagem Linfática" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
                   <div class="p-body"><h4><span>Drenagem Linfática</span></h4>
                     <button class="btn btn-know" type="button">CONHECER</button>
                   </div>
                 </article>
 
-                <article class="product service-card" tabindex="0" data-images="massagem-relaxante.jpg">
+                <article class="product service-card carousel-item" data-images="massagem-relaxante.jpg">
                   <img src="servicos/massagem-relaxante.jpg" alt="Massagem Relaxante" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
                   <div class="p-body"><h4><span>Massagem Relaxante</span></h4>
                     <button class="btn btn-know" type="button">CONHECER</button>
                   </div>
                 </article>
 
-                <article class="product service-card" tabindex="0" data-images="modeladora.jpg">
-                  <img src="servicos/modeladora.jpg" alt="Massagem Modeladora" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
-                  <div class="p-body"><h4><span>Massagem Modeladora</span></h4>
+                <article class="product service-card carousel-item" data-images="modeladora.jpg">
+                  <img src="servicos/modeladora.jpg" alt="Massagem Modellatta" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
+                  <div class="p-body"><h4><span>Massagem Modellatta</span></h4>
                     <button class="btn btn-know" type="button">CONHECER</button>
                   </div>
                 </article>
 
-                <article class="product service-card" tabindex="0" data-images="ultrasom.jpg">
+                <article class="product service-card carousel-item" data-images="ultrasom.jpg">
                   <img src="servicos/ultrasom.jpg" alt="Ventosaterapia" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
                   <div class="p-body"><h4><span>Ventosaterapia</span></h4>
                     <button class="btn btn-know" type="button">CONHECER</button>
                   </div>
                 </article>
-
-                <article class="product service-card" tabindex="0" data-images="ultrasom.jpg">
-                  <img src="servicos/ultrasom.jpg" alt="Ultrassom" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
-                  <div class="p-body"><h4><span>Ultrassom</span></h4>
-                    <button class="btn btn-know" type="button">CONHECER</button>
-                  </div>
-                </article>
-
-                <article class="product service-card" tabindex="0" data-images="corrente-rusa.jpg">
-                  <img src="servicos/corrente-rusa.jpg" alt="Corrente Russa" onerror="this.src='https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve'">
-                  <div class="p-body"><h4><span>Corrente Russa</span></h4>
-                    <button class="btn btn-know" type="button">CONHECER</button>
-                  </div>
-                </article>
+                </div>
+                <button class="carousel-btn carousel-next" aria-label="Próximo">›</button>
               </div>
             </div>
           </div>
@@ -195,26 +191,9 @@
 
       <!-- 'Destaques' section removed per request -->
 
-      <section class="subscribe band">
-        <div class="container sub-inner">
-          <div class="sub-visual">
-            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="bouquet"/>
-          </div>
-          <div class="sub-copy">
-            <h3 class="script">Subscribe for a special discount</h3>
-            <p>Receba novidades e ofertas exclusivas direto no seu e-mail.</p>
-          </div>
-          <form id="subscribe-form" class="sub-form" novalidate>
-            <input id="email" type="email" placeholder="Seu e-mail" required>
-            <button class="btn" type="submit">Inscrever</button>
-          </form>
-        </div>
-      </section>
-
       <section class="feedback" id="feedback">
         <div class="container">
-          <h2 class="section-title">O que nossos clientes dizem</h2>
-          <p class="feedback-intro">Depoimentos reais sobre os tratamentos que oferecemos — opiniões sinceras e cheias de carinho.</p>
+          <h2 class="feedback-title">O que nossos clientes dizem</h2>
           <div class="feedback-grid">
             <article class="feedback-card">
               <div class="fb-top">
@@ -266,9 +245,9 @@
 
             <article class="feedback-card">
               <div class="fb-top">
-                <div class="fb-avatar">LT</div>
+                <div class="fb-avatar">LA</div>
                 <div class="fb-meta">
-                  <strong>Lucas T.</strong>
+                  <strong>Letícia A.</strong>
                   <span class="fb-service">Drenagem Linfática</span>
                 </div>
               </div>
@@ -319,7 +298,7 @@
                 </div>
                 <div class="contact-text">
                   <strong>Endereço</strong>
-                  <p>QS 08 • Conjunto 02 • Lotes 01/04 • Sala 207<br>Centro Comercial Lux — Samambaia Sul, DF</p>
+                  <p>QS 518 Centro Comercial Lux, Conjunto 02 Lotes 01/04 Sala 207<br>Samambaia, Brasília - DF, 72314-532</p>
                 </div>
               </div>
 
@@ -356,38 +335,16 @@
                 </div>
                 <div class="contact-text">
                   <strong>E-mail</strong>
-                  <p><a href="mailto:contato@leilianemartins.com">contato@leilianemartins.com</a></p>
+                  <p><a href="mailto:studioleilianemartins@gmail.com">studioleilianemartins@gmail.com</a></p>
                 </div>
               </div>
 
               <div class="contact-actions">
-                <a class="btn primary" href="#servicos">Agende Agora</a>
-                <a class="btn ghost" href="https://www.google.com/maps?q=QS+08+Conjunto+02+Lotes+01%2F04+Samambaia+Sul+DF" target="_blank" rel="noopener">Como chegar</a>
+                <a class="btn primary" href="https://wa.me/5561992207305?text=Ol%C3%A1%2C%20Leiliane!%20Vim%20pelo%20site%20e%20quero%20conhecer%20mais%20sobre%20os%20seus%20servi%C3%A7os" target="_blank" rel="noopener">AGENDE AGORA</a>
+                <a class="btn ghost" href="https://www.google.com/maps/place/Studio+Leiliane+Martins+Est%C3%A9tica+%7C+Samambaia+Sul+DF/@-15.8790406,-48.062891,17z/data=!4m6!3m5!1s0x935a2d0017354b2b:0xeee6edf76592f4e4!8m2!3d-15.878731!4d-48.0617323!16s%2Fg%2F11xzzz8pcs?entry=ttu&g_ep=EgoyMDI1MTEzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Como chegar</a>
               </div>
 
               <p class="small-muted">Estacionamento no local • Aceitamos cartões e Pix</p>
-
-              <div class="payment-icons" aria-hidden="false">
-                <a href="#" class="pay" title="Estacionamento no local" aria-label="Estacionamento">
-                  <svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M5 16a1 1 0 0 0 0 2 1 1 0 0 0 0-2zm14 0a1 1 0 0 0 0 2 1 1 0 0 0 0-2zM5 13h14V8a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v5z" fill="currentColor"/></svg>
-                </a>
-                <a href="#" class="pay" title="Aceitamos cartões" aria-label="Cartões">
-                  <svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M22 4H2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4zm-2 6H4V6h16v4z" fill="currentColor"/></svg>
-                </a>
-                <a href="#" class="pay" title="Pix disponível" aria-label="Pix">
-                  <svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="3" width="4" height="4" fill="currentColor"/>
-                    <rect x="10" y="3" width="4" height="4" fill="currentColor"/>
-                    <rect x="17" y="3" width="4" height="4" fill="currentColor"/>
-                    <rect x="3" y="10" width="4" height="4" fill="currentColor"/>
-                    <rect x="10" y="10" width="4" height="4" fill="currentColor"/>
-                    <rect x="17" y="10" width="4" height="4" fill="currentColor"/>
-                    <rect x="3" y="17" width="4" height="4" fill="currentColor"/>
-                    <rect x="10" y="17" width="4" height="4" fill="currentColor"/>
-                    <rect x="17" y="17" width="4" height="4" fill="currentColor"/>
-                  </svg>
-                </a>
-              </div>
 
               <div class="contact-socials">
                 <a href="https://www.instagram.com/leilianemartinsestetica" target="_blank" rel="noopener" aria-label="Instagram">
@@ -413,7 +370,7 @@
 
             <div class="contact-card contact-map" aria-hidden="false">
               <iframe
-                src="https://www.google.com/maps?q=QS+08+Conjunto+02+Lotes+01%2F04+Samambaia+Sul+DF&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3938.3206742485913!2d-48.062891!3d-15.8790406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2d0017354b2b%3A0xeee6edf76592f4e4!2sStudio%20Leiliane%20Martins%20Est%C3%A9tica!5e0!3m2!1spt-BR!2sbr!4v1234567890"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Localização - Studio Leiliane Martins"
@@ -444,26 +401,7 @@
         <div class="modal-thumbs" role="list" aria-label="Miniaturas"></div>
       </div>
     </div>
-
-    <!-- Service Modal (hidden by default) -->
-    <div id="service-modal" class="modal" aria-hidden="true">
-      <div class="modal-backdrop" data-close="true"></div>
-      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal-close" aria-label="Fechar modal">&times;</button>
-        <div class="modal-body">
-          <div class="modal-media">
-            <button class="media-prev" aria-label="Imagem anterior">‹</button>
-            <img src="https://placehold.co/800x600/FDF9F8/C59A9A?text=Imagem+em+breve" alt="" class="modal-image">
-            <button class="media-next" aria-label="Próxima imagem">›</button>
-          </div>
-          <div class="modal-info">
-            <h3 id="modal-title">Título do Serviço</h3>
-            <p id="modal-desc">Descrição do serviço será exibida aqui. Você pode adicionar imagens usando o atributo <code>data-images</code> no item correspondente.</p>
-            <div class="modal-thumbs" aria-hidden="false"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <footer class="site-footer">
       <div class="container footer-inner">
@@ -519,3 +457,5 @@
     </div>
   </body>
 </html>
+
+

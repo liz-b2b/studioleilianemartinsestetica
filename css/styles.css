@@ -38,7 +38,8 @@ a:hover{text-decoration:none;color:var(--accent)}
 .header-top{text-align:center;padding-top:18px;padding-bottom:8px}
 
 .hero{padding:120px 0;background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
-.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0.35),rgba(255,255,255,0.75));pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none; /* overlay removed to show background image clearly */
+  background: none;}
 .hero-overlay{padding:40px 0}
 .hero-card{max-width:640px;margin:0 auto;padding:36px;background:rgba(255,255,255,0.85);border-radius:8px;border:1px solid rgba(0,0,0,0.06);text-align:center;position:relative}
 .hero-card::before{content:'';position:absolute;left:-28px;top:-28px;right:-28px;bottom:-28px;border:2px solid rgba(243,214,216,0.6);border-radius:12px;pointer-events:none;box-shadow:0 18px 40px rgba(0,0,0,0.06)}
@@ -99,6 +100,71 @@ a:hover{text-decoration:none;color:var(--accent)}
 .service-card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(16,12,12,0.12)}
 .service-card:hover img{transform:scale(1.06)}
 
+/* Carousel Styles */
+.carousel-container{position:relative;display:flex;align-items:center;gap:12px}
+.carousel-track{display:flex;gap:22px;overflow-x:auto;overflow-y:hidden;flex:1;width:100%;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
+.carousel-item{flex:0 0 calc(50% - 11px);min-height:360px;display:flex;flex-direction:column;border-radius:14px;overflow:hidden;border:0;background:#fff;box-shadow:0 10px 30px rgba(16,12,12,0.06);transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s;scroll-snap-align:start}
+
+/* Custom scrollbar for the carousel track: hide arrow buttons and show a thin thumb */
+.carousel-track::-webkit-scrollbar{height:10px;display:block !important}
+.carousel-track::-webkit-scrollbar-button{display:none;height:0;width:0}
+.carousel-track::-webkit-scrollbar-button:single-button{display:none;height:0;width:0}
+.carousel-track::-webkit-scrollbar-track{background:transparent;border-radius:999px}
+.carousel-track::-webkit-scrollbar-thumb{background:rgba(199,127,134,0.9);border-radius:999px}
+.carousel-track::-webkit-scrollbar-thumb:hover{background:rgba(199,127,134,1)}
+.carousel-track::-webkit-scrollbar-corner{background:transparent}
+
+/* Firefox scrollbar support */
+.carousel-track{scrollbar-width:auto;scrollbar-color: rgba(199,127,134,0.9) transparent}
+
+/* Legacy MS/IE: try to prefer overlay/autohide where supported */
+.carousel-track{ -ms-overflow-style: -ms-autohiding-scrollbar; }
+
+/* For Windows where arrows still appear, hide the scrollbar buttons more aggressively
+   (some platforms ignore ::-webkit-scrollbar-button; this tries to null their size) */
+.carousel-track::-webkit-scrollbar-button:start, .carousel-track::-webkit-scrollbar-button:end {
+  width:0 !important; height:0 !important; display:none !important; visibility:hidden !important;
+}
+
+/* Mobile adjustments: show single item per view, smaller gaps and heights */
+@media (max-width:900px){
+  .carousel-item{flex:0 0 100% !important;min-height:260px}
+  .carousel-track{gap:14px}
+  .carousel-btn{width:34px;height:34px;font-size:16px}
+
+  /* More specific rules to override any competing selectors and ensure
+     each item occupies full width of the track on small screens. */
+  .services .carousel-container .carousel-track > .carousel-item,
+  .carousel-container .carousel-track > .carousel-item {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    scroll-snap-align: start !important;
+  }
+
+  /* ensure images don't cause unexpected overflow */
+  .carousel-container .carousel-item img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+}
+
+@media (max-width:480px){
+  .carousel-item{min-height:220px}
+  .carousel-btn{width:30px;height:30px;font-size:14px}
+}
+.carousel-item img{height:220px;object-fit:cover;width:100%;display:block;transition:transform .6s ease}
+.carousel-item .p-body{padding:18px 16px 20px;flex:0 0 auto}
+.carousel-item h4{font-size:16px;margin:0;color:#2e2e2e}
+.carousel-item .p-body span{display:block;font-weight:700}
+.carousel-item:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(16,12,12,0.12)}
+.carousel-item:hover img{transform:scale(1.06)}
+.carousel-btn{background:rgba(199,127,134,0.8);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .22s ease;flex-shrink:0}
+.carousel-btn:hover{background:rgba(199,127,134,1)}
+.carousel-btn:disabled{opacity:0.5;cursor:not-allowed}
+
 /* subtle overlay accent when hovering */
 .service-card::after{content:'';position:absolute;inset:0;border-radius:14px;pointer-events:none;opacity:0;transition:opacity .28s}
 .service-card:hover::after{opacity:1;background:linear-gradient(180deg,rgba(250,240,240,0.03),rgba(233,214,216,0.04))}
@@ -134,7 +200,8 @@ a:hover{text-decoration:none;color:var(--accent)}
 .review .rating{color:#d98c8f;font-size:18px}
 
 /* Feedback by service (beautiful cards) */
-.feedback{padding:28px 0}
+.feedback{padding:28px 0;background:rgba(243,214,216,0.7)}
+.feedback-title{font-family:'Playfair Display',serif;font-size:48px;margin:0 0 32px 0;color:var(--text);text-align:center;letter-spacing:1px}
 .feedback-intro{color:var(--muted);max-width:760px;margin:6px 0 18px}
 .feedback-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .feedback-card{background:linear-gradient(180deg,#fff,#fff);border-radius:12px;padding:18px;box-shadow:0 18px 40px rgba(16,12,12,0.06);border:1px solid rgba(16,12,12,0.04);display:flex;flex-direction:column;gap:12px}
@@ -444,3 +511,19 @@ html{scrollbar-width:thin;scrollbar-color:#c77f86 #f7ebe9}
 @media (prefers-reduced-motion: reduce){
   ::-webkit-scrollbar-thumb{transition:none}
 }
+
+/* Services Stacked Layout */
+.services-grid.services-stacked{display:flex;flex-direction:column;gap:60px;align-items:center;width:100%}
+.services-col{flex:1;width:100%;min-width:100%;display:flex;flex-direction:column;align-items:center;text-align:center}
+.services-col .services-title{border-bottom:none;font-size:28px;margin-bottom:32px;width:100%}
+
+/* Carousel Full Width Centered */
+.carousel-container{width:100%;display:flex;align-items:center;gap:12px;justify-content:center}
+.carousel-item{flex:0 0 calc(50% - 11px);min-height:400px;max-width:calc(50% - 11px)}
+.carousel-item img{height:280px}
+
+/* Center text in cards */
+.carousel-item .p-body{text-align:center}
+.carousel-item h4{text-align:center;font-size:17px}
+.carousel-item .btn-know{width:100%;margin-top:16px}
+

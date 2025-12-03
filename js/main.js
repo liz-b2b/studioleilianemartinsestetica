@@ -339,4 +339,107 @@ document.addEventListener('DOMContentLoaded', function(){
     installBtn.setAttribute('aria-hidden','true');
     deferredInstallPrompt = null;
   });
+
+  // Carousel functionality
+  function initCarousel(carouselContainer) {
+    const track = carouselContainer.querySelector('.carousel-track');
+    const items = Array.from(carouselContainer.querySelectorAll('.carousel-item'));
+    const prevBtn = carouselContainer.querySelector('.carousel-prev');
+    const nextBtn = carouselContainer.querySelector('.carousel-next');
+
+    if (!track || !items.length) return;
+
+    // ensure scrollable track (CSS also sets scroll-snap)
+    track.style.overflowX = 'auto';
+    track.style.scrollBehavior = 'smooth';
+
+    // viewport adaptation: force 1 item per view on narrow screens to avoid layout mismatch
+    const mqMobile = window.matchMedia('(max-width:900px)');
+    function applyMobileSizing() {
+      if (mqMobile.matches) {
+        items.forEach(it => { it.style.flex = '0 0 100%'; });
+        // smaller gap on mobile
+        track.style.gap = '14px';
+      } else {
+        // restore to default desktop sizing
+        items.forEach(it => { it.style.flex = ''; });
+        track.style.gap = '';
+      }
+    }
+    applyMobileSizing();
+    mqMobile.addEventListener && mqMobile.addEventListener('change', () => { applyMobileSizing(); scrollToIndex(0); });
+
+    let currentIndex = 0;
+
+    function getGap() {
+      try { const gap = getComputedStyle(track).gap; return gap ? parseFloat(gap) : 22; } catch (e) { return 22; }
+    }
+
+    function getItemWidth() {
+      const rect = items[0].getBoundingClientRect();
+      if (rect && rect.width > 0) return rect.width;
+      // fallback
+      return items[0].offsetWidth || (carouselContainer.clientWidth / 2) || 300;
+    }
+
+    function visibleCount() {
+      const gap = getGap();
+      const iw = getItemWidth();
+      // if items are forced to 100% width, visibleCount is 1
+      if (mqMobile.matches) return 1;
+      return Math.max(1, Math.floor((track.clientWidth + gap) / (iw + gap)));
+    }
+
+    function maxIndex() { return Math.max(0, items.length - visibleCount()); }
+
+    function clampIndex(i) { return Math.max(0, Math.min(i, maxIndex())); }
+
+    function scrollToIndex(i) {
+      i = clampIndex(i);
+      const gap = getGap();
+      const iw = getItemWidth();
+      const left = Math.round(i * (iw + gap));
+      track.scrollTo({ left, behavior: 'smooth' });
+      currentIndex = i;
+      updateButtons();
+    }
+
+    function updateButtons() {
+      const m = maxIndex();
+      if (prevBtn) prevBtn.disabled = currentIndex <= 0;
+      if (nextBtn) nextBtn.disabled = currentIndex >= m;
+    }
+
+    // initialize
+    applyMobileSizing();
+    // ensure measurements are accurate after potential style changes
+    setTimeout(()=> scrollToIndex(0), 50);
+
+    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); scrollToIndex(currentIndex - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); scrollToIndex(currentIndex + 1); });
+
+    // keep index in sync when user scrolls (use debounce)
+    let scrollTimer = null;
+    track.addEventListener('scroll', () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        const gap = getGap();
+        const iw = getItemWidth();
+        const idx = Math.round(track.scrollLeft / (iw + gap));
+        currentIndex = clampIndex(idx);
+        updateButtons();
+      }, 80);
+    });
+
+    // adapt on resize
+    let resizeTimer = null;
+    window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(()=> { applyMobileSizing(); scrollToIndex(currentIndex); }, 120); });
+  }
+  
+  // Initialize all carousels
+  const carousels = document.querySelectorAll('.carousel-container');
+  carousels.forEach(carousel => {
+    initCarousel(carousel);
+  });
+
 });
