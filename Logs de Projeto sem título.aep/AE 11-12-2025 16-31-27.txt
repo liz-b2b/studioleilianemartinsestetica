@@ -1,0 +1,8 @@
+  11/12/2025 16:31:27: iniciando composição “Color Control”.
+
+  Saída para: C:\Users\Alexandre\Downloads\Liza.avi      Renderização interrompida pelo usuário.      Renderização interrompida pelo usuário.  Erro do After Effects: Um módulo de saída parou de responder. O arquivo pode estar corrompido ou danificado. Talvez seja necessário reiniciar o After Effects.Aviso do After Effects: Desfazer incompatibilidade de grupo, tentará corrigir.  11/12/2025 16:32:10: composição concluída “Color Control”.
+
+
+  Tempo total decorrido: 25 segundos
+Log fechado em 11/12/2025 às 16:32:10
+

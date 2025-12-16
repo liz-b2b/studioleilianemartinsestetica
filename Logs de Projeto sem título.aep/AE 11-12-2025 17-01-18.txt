@@ -1,0 +1,8 @@
+  11/12/2025 17:01:18: iniciando composição “Color Control”.
+
+  Saída para: C:\Users\Alexandre\Downloads\Color Control.avi    11/12/2025 17:12:32: composição concluída “Color Control”.
+
+
+  Tempo total decorrido: 11 min, 14 s
+Log fechado em 11/12/2025 às 17:12:32
+

@@ -1,0 +1,8 @@
+  11/12/2025 16:32:57: iniciando composição “Color Control”.
+
+  Saída para: C:\Users\Alexandre\Downloads\Leiliane.avi    11/12/2025 16:46:31: composição concluída “Color Control”.
+
+
+  Tempo total decorrido: 13 min, 34 s
+Log fechado em 11/12/2025 às 16:46:31
+
